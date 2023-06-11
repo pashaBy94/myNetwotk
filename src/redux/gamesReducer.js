@@ -50,6 +50,7 @@ export function gamesReducer(state = initialState, action){
                     break;
                 }
                 case CROSS_OR_ZERO_EXAMINATION:{
+                  console.log(3232323);
                     const arr = newState.crossOrZero.victoriCombination;
                     const red = newState.crossOrZero.red.combinationRed;
                     const blue= newState.crossOrZero.blue.combinationBlue;

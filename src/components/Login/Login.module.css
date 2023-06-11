@@ -1,18 +1,21 @@
-.login{
+.login {
     display: flex;
     align-items: center;
     min-height: 600px;
     height: 100%;
 }
+
 .form__login {
     box-sizing: border-box;
     width: 500px;
     border: 2px solid grey;
+    border-radius: 10px;
     margin: 0 auto;
     text-align: center;
     font-size: 19px;
     padding: 20px;
 }
+
 .form__login_title {
     margin: 0;
     margin-bottom: 20px;
@@ -86,14 +89,43 @@
     margin-bottom: 20px;
 }
 
-.messag__errors{
-    border: 1px solid red;
+.messag__errors {
+    border: 1px solid rgb(249, 59, 59);
+    border-radius: 10px;
+    color: rgb(249, 59, 59);
+    font-weight: bold;
     margin: 10px;
     padding: 10px;
     display: inline-block;
 }
-.wrap_captcha{
-  width: 300px;
-  margin: auto;
-  margin-bottom: 30px;
+
+.wrap_captcha {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.capcha{
+    margin: 0 auto;
+}
+.capcha__img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 300px;
+    height: 120px;
+}
+.wrap__capcha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.capcha__input{
+padding: 10px 20px;
+font-size: 16px;
+margin-right: 20px;
+}
+.capcha__btn{
+display: inline-block;
+cursor: pointer;
 }

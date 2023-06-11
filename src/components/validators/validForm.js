@@ -37,7 +37,7 @@ export function validateMessag(maxSymbol, obj) {
 export function validateUrl(maxSymbol){
     return (val) => {
         const errors = {};
-        if (val.aboutMe.length > maxSymbol){
+        if (val?.aboutMe?.length > maxSymbol){
             errors.aboutMe = 'Max symbol is 100';
         }
         if (val.fullName.length > maxSymbol / 5) {

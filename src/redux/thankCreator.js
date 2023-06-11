@@ -137,7 +137,7 @@ export const updateInfoProfileThunk = (info, submitProps, setModEdit) => {
         userAPI.updateInfoProfile(info).then(res => {
             if (res.data.resultCode === 0) {
                 dispatch(updateAboutMyInfo(info));
-                setModEdit(true);
+                setModEdit(false);
             } else {
                 submitProps({ errors: res.data.messages[0] })
             }

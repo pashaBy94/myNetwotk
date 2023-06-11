@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AboutForm from "../Profile/UserProfile/AboutMy/AboutForm/AboutForm";
 import st from './Settings.module.css'
 import { connect } from "react-redux";
@@ -12,6 +12,12 @@ import { MdDoneOutline } from "react-icons/md";
 
 function Settings(props) {
     const [modEdit, setModEdit] = useState(false);
+    const [isOk, setOk] = useState(false);
+    useEffect(()=>{
+        return ()=>{
+            setModEdit(false);
+        }
+    });
     if (!props.currentProfile) return <Preloader />
     return (
         <div className={st.settings}>
@@ -23,8 +29,9 @@ function Settings(props) {
                     isMyPages={props.isMyPages}
                     setModEdit={setModEdit}
                     authenticationId={props.authenticationId}
+                    setOk={setOk}
                 />
-                {modEdit?<div className={st.is__ok}>
+                {isOk?<div className={st.is__ok}>
                     <IconContext.Provider value={{ size: "3em", color: "#23D16F" }}>
                         <MdDoneOutline />
                     </IconContext.Provider>

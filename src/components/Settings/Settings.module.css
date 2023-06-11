@@ -24,3 +24,7 @@
   background-color: rgba(223, 243, 239, 0.384);
   z-index: 20;
 }
+.abs{
+  position: absolute;
+  margin-top: -20px;
+}

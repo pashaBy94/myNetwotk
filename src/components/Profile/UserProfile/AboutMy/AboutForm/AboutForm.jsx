@@ -7,7 +7,7 @@ import { validateUrl } from "../../../../validators/validForm";
 
 
 
-export default function AboutForm({ profile, setModEdit, updateInfoProfileThunk, authenticationId }) {
+export default function AboutForm({ profile, setModEdit, updateInfoProfileThunk, authenticationId, setOk=()=>{} }) {
     const [isFail, setNoFail] = useState(false);
     function onClick() {
         setNoFail(false);
@@ -28,6 +28,7 @@ export default function AboutForm({ profile, setModEdit, updateInfoProfileThunk,
                 onSubmit={(val, setSubmit) => {
                     let obj = { userId: authenticationId, ...val };
                     updateInfoProfileThunk(obj, setSubmit.setStatus, setModEdit);
+                    setOk(true);
                 }}
             >
                 {(formik) => {

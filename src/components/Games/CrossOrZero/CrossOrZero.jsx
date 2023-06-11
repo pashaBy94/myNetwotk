@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import st from './CrossOrZero.module.css'
@@ -26,12 +26,12 @@ export default function CrossOrZero(props){
     const child = ref.current.children;
     for (let i = 0; i < child.length; i++) {
       for (let j = 0; j < child[i].children.length; j++) {
-        console.log(child[i].children[j]);
         child[i].children[j].className = '';
       }
     }
   }
   function clickTable(ev){
+    console.log(111);
     setNumbMove(p=>p+1);
     ev.target.className = st[props.currentMove];
     if(props.countMove-1 >= numbMove){
@@ -47,7 +47,7 @@ export default function CrossOrZero(props){
       setTimeout(newGame,300)
 
     }
-  }
+  };
   if(!props.nameRed) return <ModalStart setNameRed={props.setNameRed}
   setNameBlue={props.setNameBlue}/>
   // if(!theEnd) return (
@@ -75,7 +75,7 @@ export default function CrossOrZero(props){
                 <FiFlag />
               </IconContext.Provider>
               <span className={st.name__players}>{props.nameRed}</span>
-              <span className={st.name__count}>Count victori: {props.victoriRed}</span>
+              <span className={st.name__count}>Count victori: {props.victoriRed/2}</span>
               </div>
               {play
               ?<IconContext.Provider value={{ size: "3em", color: "rgb(227, 136, 136)" }}>
@@ -89,7 +89,7 @@ export default function CrossOrZero(props){
               <IconContext.Provider value={{ size: "3em", color: "rgb(136, 151, 227)" }}>
                 <FiFlag />
               </IconContext.Provider>
-              <span className={st.name__count}>Count victori: {props.victoriBlue}</span>
+              <span className={st.name__count}>Count victori: {props.victoriBlue/2}</span>
               </div>
             </div>
             <div className={st.game__crosszero__plac}>

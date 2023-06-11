@@ -4,23 +4,30 @@ import { Formik } from 'formik';
 import { validate } from "../validators/validForm";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { validStatus } from "../validators/validForm";
+import { IconContext } from "react-icons";
+import { RxUpdate } from "react-icons/rx";
+
 
 function CaptchFromServer(props) {
     return (
-        <div>
-            <img src={props.captchaUrl} alt='' />
-            <input type='text'
-                id='responseCaptcha'
-                name='responseCaptcha'
-                placeholder='captcha'
-                onChange={props.handleChange}
-                onBlur={props.handleBlur}
-            /> <button onClick={(e)=>{
-                e.preventDefault();
-                props.getCaptchaThank();
-
-            }}>O</button>
-        </div>
+        <div className={st.capcha}>
+            <img src={props.captchaUrl} alt='' className={st.capcha__img} />
+            <div className={st.wrap__capcha}>
+                <input type='text'
+                    id='responseCaptcha'
+                    name='responseCaptcha'
+                    placeholder='captcha'
+                    onChange={props.handleChange}
+                    onBlur={props.handleBlur}
+                    className={st.capcha__input}
+                />
+                <div className={st.capcha__btn} onClick={(e) => { props.getCaptchaThank() }}>
+                    <IconContext.Provider value={{ size: "2em", color: "#4A77A8" }}>
+                        <RxUpdate />
+                    </IconContext.Provider>
+                </div>
+            </div>
+        </div >
     )
 }
 
@@ -99,7 +106,7 @@ function LoginForm(props) {
                             captchaUrl={props.captchaUrl}
                             getCaptchaThank={props.getCaptchaThank} /> : null
                         }
-                        <input type="submit" value='submit' onClick={()=>setNoFail(false)} disabled={isDisabled} className={st.form__btn} />
+                        <input type="submit" value='submit' onClick={() => setNoFail(false)} disabled={isDisabled} className={st.form__btn} />
                         {isFail ? validStatus(formik, st) : null}
                     </form>
                 )
@@ -111,7 +118,7 @@ function LoginForm(props) {
 export default function Login(props) {
     return (
         <div className={st.login}>
-            <LoginForm loginThank={props.loginThank} captchaUrl={props.captchaUrl}  getCaptchaThank={props.getCaptchaThank}/>
+            <LoginForm loginThank={props.loginThank} captchaUrl={props.captchaUrl} getCaptchaThank={props.getCaptchaThank} />
         </div>
     )
 }
