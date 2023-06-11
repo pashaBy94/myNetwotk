@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5{
+    margin: 0;
+    padding: 0;
+}
+#root {
+
+}
+
+.app{}
+.app-wrapper {
+    font-family: Arial;
+    color: #4A77A8;
+    font-size: 16px;
+    overflow: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 350px 10fr;
+    grid-template-columns: 250px 10fr;
+    align-items: start;
+    width: 100%;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "nn cc"
+        "fr cc";
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+}
+
+.app__wrapper_content {
+    grid-area: cc;
+
+}
+
+a {
+    color: #4A77A8;
+}
+
+li {
+    list-style-type: none;
+}
+html{
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,18 @@
+.content{
+      position: relative;
+      background-color: #EDEEF0;
+      padding: 15px;
+  }
+ 
+  .about__text h2{
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .about__save p{
+    line-height: 30px;
+  }
+
+  h2{
+    margin: 0 0 20px 10px;
+  }

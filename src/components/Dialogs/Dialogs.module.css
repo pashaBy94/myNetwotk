@@ -1,0 +1,18 @@
+.dialogs{
+    padding: 15px;
+}
+.dialog__title{
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.list__messag{
+    padding-bottom: 70px;
+    height: 515px;
+    /* margin-bottom: 15px; */
+}
+
+.list__messag::-webkit-scrollbar{
+    width: 0;
+}

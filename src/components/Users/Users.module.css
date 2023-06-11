@@ -1,0 +1,24 @@
+.users{
+    padding: 15px;
+}
+.users__title{
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.users__show{
+    width: 100%;
+}
+.users__btn{
+    display: block;
+    padding: 20px 30px;
+    line-height: 15px;
+    font-size: 20px;
+    border: none;
+    width: 250px;
+    border-radius: 10px;
+    background-color: chocolate;
+    cursor: pointer;
+    margin: 0 auto;
+}

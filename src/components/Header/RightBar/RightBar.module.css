@@ -1,0 +1,31 @@
+.header__right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 170px;
+}
+.header__right__open{
+  font-weight: 900;
+  border: none;
+  background-color: transparent;
+  color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.header__right__open:hover{
+  background-color: #afb8ce;
+}
+.header__right__title{
+  cursor: default;
+}
+.header__btn{
+  width: 15px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}

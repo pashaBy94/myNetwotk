@@ -1,0 +1,17 @@
+.header__right__ava {
+  text-align: center;
+  vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__right__imag {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url('../../../../../../public/noava.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

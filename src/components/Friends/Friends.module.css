@@ -1,0 +1,10 @@
+.friends{
+    grid-area: fr;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.friends__title{
+    margin-bottom: 15px;
+}

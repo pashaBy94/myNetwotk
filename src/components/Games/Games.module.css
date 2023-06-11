@@ -1,0 +1,30 @@
+.games{
+  padding: 15px;
+}
+.games__title{
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+.games__item{
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 50px;
+  font-size: 18px;
+}
+.games__item:hover{
+  border: 2px solid rgb(197, 203, 243);
+
+}
+.game__img{
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgb(197, 203, 243);
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 200px;
+}

@@ -1,0 +1,10 @@
+.footer{
+    width: 100%;
+    height: 60px;
+    display: block;
+    background-color: #4A76A8;
+    box-shadow: 0px -1px 4px 4px #bbcadb;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-top: 15px;
+  }

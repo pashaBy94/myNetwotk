@@ -1,0 +1,38 @@
+.start{
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.start__form{
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  width: 600px;
+}
+.start__form_title{
+  text-align: center;
+
+}
+.start__form_subscrib{
+  display: inline-block;
+  text-align: left;
+  width: 250px;
+  font-size: 20px;
+}
+.start__form_input{
+padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+
+}
+.start__form_button{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #cedcec;
+}

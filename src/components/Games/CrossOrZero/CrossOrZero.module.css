@@ -1,0 +1,92 @@
+.game__crosszero{
+  width: 100%;
+  padding: 15px;
+  position: relative;
+}
+.game__crosszero__wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 15px;
+  border: 5px;
+}
+.game__wrap{
+  width: 700px;
+}
+.game__crosszero__title{
+  margin-bottom: 15px;
+  text-align: center;
+}
+.game__crosszero__body{
+  padding: 15px;
+  border: 1px solid rgb(197, 203, 243);
+  border-radius: 10px;
+}
+td{
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid greenyellow;
+  position: relative;
+}
+
+.game__crosszero__table{
+  user-select: none;
+  width: 500px;
+  height: 500px;
+}
+.game__crosszero__info{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgb(197, 203, 243);
+  margin-bottom: 15px;
+}
+.name__players{
+  font-weight: bold;
+  font-size: 20px;
+}
+.name__count{
+  display: block;
+}
+.game__crosszero__plac{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.red{
+}
+.red::after{
+  content:'';
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(at 40px 40px, rgb(236, 131, 131),rgb(129, 26, 26));
+  top: 15%;
+  left: 15%;
+}
+.blue{
+}
+.blue::after{
+  content:'';
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(at 40px 40px, rgb(154, 167, 232),rgb(65, 91, 221));
+  top: 15%;
+  left: 15%;
+}
+/* .wins{
+  background-color: antiquewhite;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+} */

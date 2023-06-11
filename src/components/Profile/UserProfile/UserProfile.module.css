@@ -1,0 +1,49 @@
+.about{
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .about__photo{
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0 15px 0 0;
+  }
+
+  .about__text{
+    background-color: white;
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .about__fullname{
+    margin-bottom: 5px;
+    margin-left: 0;
+    color: rgb(66, 65, 65);
+  }
+  .about__hr{
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+  .user__imag{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
+    height: 250px; 
+    width: 250px;
+    border-radius: 5px;
+  }
+  .photo__download{
+    display: none;
+  }
+  .user__photo__btn{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #EDEEF0;
+    line-height: 40px;
+    text-align: center;
+  }

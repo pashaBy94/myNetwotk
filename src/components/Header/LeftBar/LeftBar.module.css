@@ -1,0 +1,11 @@
+.header__left{
+    width: 230px;
+    /* padding-left: 5px; */
+    display: flex;
+    justify-content: space-between;
+
+}
+.header__left__tag{
+    /* line-height: 100%; */
+    margin: 0;
+}

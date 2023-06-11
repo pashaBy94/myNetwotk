@@ -1,0 +1,29 @@
+.about__info p {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 2px;
+}
+.about__info strong{
+  display: inline-block;
+  width: 160px;
+  min-width: 160px;
+  line-height: 20px;
+}
+.about__info span{
+  display: inline-block;
+  line-height: 20px;
+}
+.about__info__rename{
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  height: 40px;
+  color: #4A77A8;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #EDEEF0;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 15px;
+}

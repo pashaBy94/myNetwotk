@@ -1,0 +1,8 @@
+.arrow__top{
+  opacity: 0.5;
+  position: fixed;
+  bottom: 70px;
+  right: 60px;
+  display: inline-block;
+  cursor: pointer;
+}
