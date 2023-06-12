@@ -2,7 +2,7 @@ import React from "react";
 import CrossOrZero from "./CrossOrZero";
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue } from "../../../redux/gamesReducer";
+import { setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue } from "../../../redux/gamesReducer.ts";
 import { getCountMove, getCurrentMove, getCombinationRed, getCombinationBlue, getCurrentVictoriCrossOrZero, getVictoriRed, getVictoriBlue, getNameBlue, getNameRed } from "../../../redux/selectors";
 
 class CrossOrZeroContainer extends React.Component{

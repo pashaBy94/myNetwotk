@@ -12,14 +12,15 @@ import { ImArrowRight, ImArrowLeft } from "react-icons/im";
 export default function CrossOrZero(props){
   const [numbMove, setNumbMove] = useState(1);
   const [play, setPlay] = useState(true);
-  // const [theEnd, setTheEnd] = useState(false);
+  const [theEnd, setTheEnd] = useState(false);
+  console.log(props);
   const ref = useRef(null);
   useEffect(()=>{
     if(props.currentVictori) {
-      props.setNewGameCrossOrZero();
+      // props.setNewGameCrossOrZero();
       setPlay(true);
       setNumbMove(1);
-      setTimeout(newGame,300);
+      setTheEnd(true);
     }
   },[props.currentVictori]);
   function newGame(){
@@ -31,7 +32,6 @@ export default function CrossOrZero(props){
     }
   }
   function clickTable(ev){
-    console.log(111);
     setNumbMove(p=>p+1);
     ev.target.className = st[props.currentMove];
     if(props.countMove-1 >= numbMove){
@@ -42,8 +42,10 @@ export default function CrossOrZero(props){
       props.crossOrZeroExamination();
     }else{
       props.setNewGameCrossOrZero();
+      console.log(props.currentVictori);
       setPlay(true);
       setNumbMove(1);
+      setTheEnd(true);
       setTimeout(newGame,300)
 
     }
@@ -116,6 +118,24 @@ export default function CrossOrZero(props){
             </div>
           </div>
         </div>
+      </div>
+      {/* {theEnd?<div>{props.currentVictori}q wdqwdqdqw</div>:null} */}
+      <div className={theEnd?st.wins:st.wins_none} onClick={()=>{
+        setTheEnd(false);
+        newGame();
+        props.setNewGameCrossOrZero();
+        }}><div>Victory: {props.currentVictori?props.currentVictori:'draw won'}</div>
+        {!props.currentVictori
+        ?<IconContext.Provider value={{ size: "7em", color: "rgb(72, 200, 94)"}}>
+        <FiFlag />
+      </IconContext.Provider>
+        :(props.currentVictori === 'red')
+        ?<IconContext.Provider value={{ size: "7em", color: "rgb(227, 136, 136)" }}>
+          <FiFlag />
+        </IconContext.Provider>
+        :<IconContext.Provider value={{ size: "7em", color: "rgb(136, 151, 227)" }}>
+          <FiFlag />
+        </IconContext.Provider>} 
       </div>
     </div>
   )

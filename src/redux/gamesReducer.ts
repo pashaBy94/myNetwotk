@@ -1,16 +1,64 @@
 import { SET_CURRENT_MOVE, SET_COMBINATION_RED, SET_COMBINATION_BLUE, CROSS_OR_ZERO_EXAMINATION, SET_NAME_BLUE, SET_NAME_RED, SET_CURRENT_VICTORI, SET_NEW_GAME_COZ } from "./types";
 
-export const setCurrentMove = (current)=> ({type: SET_CURRENT_MOVE, current});
-export const setCombinationRed = (num)=> ({type: SET_COMBINATION_RED, num});
-export const setCombinationBlue = (num)=> ({type: SET_COMBINATION_BLUE, num});
-export const crossOrZeroExamination = ()=> ({type: CROSS_OR_ZERO_EXAMINATION});
-export const setCurrentVictori = (name)=> ({type: SET_CURRENT_VICTORI, name});
-export const setNewGameCrossOrZero = ()=> ({type: SET_NEW_GAME_COZ});
-export const setNameRed = (name)=> ({type: SET_NAME_RED, name});
-export const setNameBlue = (name)=> ({type: SET_NAME_BLUE, name});
+type setCurrentMoveType = {
+  type: typeof SET_CURRENT_MOVE,
+  current: string
+};
+type setCombinationRedType = {
+  type: typeof SET_COMBINATION_RED,
+  num: number
+};
+type setCombinationBlueType = {
+  type: typeof SET_COMBINATION_BLUE,
+  num: number
+};
+type crossOrZeroExaminationType = {
+  type: typeof CROSS_OR_ZERO_EXAMINATION
+};
+type setCurrentVictoriType = {
+  type: typeof SET_CURRENT_VICTORI,
+  name: string
+};
+type setNewGameCrossOrZeroType = {
+  type: typeof SET_NEW_GAME_COZ
+};
+type setNameRedType = {
+  type: typeof SET_NAME_RED,
+  name: string
+};
+type setNameBlueType = {
+  type: typeof SET_NAME_BLUE,
+  name: string
+};
+
+export const setCurrentMove = (current:string):setCurrentMoveType => ({type: SET_CURRENT_MOVE, current});
+export const setCombinationRed = (num:number|never):setCombinationRedType => ({type: SET_COMBINATION_RED, num});
+export const setCombinationBlue = (num:number|never):setCombinationBlueType => ({type: SET_COMBINATION_BLUE, num});
+export const crossOrZeroExamination = ():crossOrZeroExaminationType => ({type: CROSS_OR_ZERO_EXAMINATION});
+export const setCurrentVictori = (name:string):setCurrentVictoriType => ({type: SET_CURRENT_VICTORI, name});
+export const setNewGameCrossOrZero = ():setNewGameCrossOrZeroType => ({type: SET_NEW_GAME_COZ});
+export const setNameRed = (name:string):setNameRedType => ({type: SET_NAME_RED, name});
+export const setNameBlue = (name:string):setNameBlueType => ({type: SET_NAME_BLUE, name});
 
 
-
+type initialStateType = {
+  crossOrZero:{
+    victoriCombination:Array<Array<number>>,
+    countMove: number,
+    currentMove: string,
+    currentVictori: string,
+    red:{
+      nameRed: string,
+      victoriRed: number,
+      combinationRed: any,
+    }
+    blue:{
+      nameBlue: string,
+      victoriBlue: number,
+      combinationBlue: any,
+  }
+}
+};
 
 const initialState = {
     crossOrZero: {
@@ -34,8 +82,8 @@ const initialState = {
     }
 };
 
-export function gamesReducer(state = initialState, action){
-    let newState = structuredClone(state);
+export function gamesReducer(state = initialState, action:any):initialStateType{
+    let newState:initialStateType = structuredClone(state);
     switch (action.type) {
                 case SET_CURRENT_MOVE:{
                   newState.crossOrZero.currentMove = action.current;
@@ -50,15 +98,14 @@ export function gamesReducer(state = initialState, action){
                     break;
                 }
                 case CROSS_OR_ZERO_EXAMINATION:{
-                  console.log(3232323);
                     const arr = newState.crossOrZero.victoriCombination;
                     const red = newState.crossOrZero.red.combinationRed;
                     const blue= newState.crossOrZero.blue.combinationBlue;
-                    let result;
+                    let result:any;
                     arr.forEach((ar)=>{
                       let countR=0;
                       let countB=0;
-                      ar.forEach((a)=>{
+                      ar.forEach((a:number)=>{
                         if(red.includes(String(a))) countR++;
                         if(countR === 3) {
                           result = 'red';

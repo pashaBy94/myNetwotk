@@ -1,7 +1,7 @@
 import React from "react";
 import Dialogs from "./Dialogs";
 import { connect } from "react-redux";
-import { messagAdd } from "../../redux/dialogsPageReducer";
+import { messagAdd } from "../../redux/dialogsPageReducer.ts";
 import { authUs } from "../../hot/authUs";
 import { compose } from "redux";
 import { getDialodsPageData, getMessag } from "../../redux/selectors";

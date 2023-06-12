@@ -7,7 +7,7 @@ import Messages from "./Messages/Messages";
 export default function Dialogs(props) {
     return (<div className={st.dialogs}>
                 <div className={st.dialog__head}>
-                    <h2 className={st.dialog__title}>Сообщения</h2>
+                    <h2 className={st.dialog__title}>Messages</h2>
                 </div>
                 <div className={st.list__messag}>
                     <DialogsList listUs={props.data}/>             

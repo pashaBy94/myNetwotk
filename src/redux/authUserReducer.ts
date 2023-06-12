@@ -9,19 +9,14 @@ data: {
     isAuth: boolean
 }
 };
-export const setAuthUser = (email:string, login:string, id:number, isAuth:boolean):setAuthUserType => ({ type: SET_AUTH_USER, data: { email, login, id, isAuth } });
-
 type setProfileType = {
     type: typeof SET_PROFILE,
     profile: object|null
-}
-export const setProfile = (profile:object):setProfileType => ({ type: SET_PROFILE, profile });
+};
 type getCaptchaFromStoreType = {
     type: typeof GET_CAPTCHA,
     urls: string|null
 };
-export const getCaptchaFromStore = (urls:string|null):getCaptchaFromStoreType => ({type: GET_CAPTCHA, urls});
-
 export type authenticationType = {
     email: string | null,
     login: string | null,
@@ -32,8 +27,14 @@ export type initialStateType = {
     isAuth: boolean,
     profile: object | null,
     captchaUrl: null | string | object,
-
 }
+
+export const setAuthUser = (email:string, login:string, id:number, isAuth:boolean):setAuthUserType => ({ type: SET_AUTH_USER, data: { email, login, id, isAuth } });
+
+export const setProfile = (profile:object):setProfileType => ({ type: SET_PROFILE, profile });
+
+export const getCaptchaFromStore = (urls:string|null):getCaptchaFromStoreType => ({type: GET_CAPTCHA, urls});
+
 
 const initialState: initialStateType = {
     authentication: {

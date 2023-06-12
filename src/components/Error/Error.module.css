@@ -1,11 +1,25 @@
-.header{
+.error{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+z-index: 800;
+}
+.headers{
   height: 60px;
+  width: 100%;
   display: block;
   background-color: #4A76A8;
   box-shadow: 0px 1px 4px 4px #bbcadb;
   color: #FFFFFF;
   font-weight: 600;
   margin-bottom: 15px;
+    position: fixed;
+  top: 0;
+  left: 0;
 }
 .footer{
   width: 100%;
@@ -20,8 +34,13 @@
   margin-top: 15px;
 }
 .body{
+  margin-top: 90px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+   position: fixed;
+  top: 70px;
 }
 .title{
   font-size: 260px;

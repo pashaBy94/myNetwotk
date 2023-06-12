@@ -6,7 +6,7 @@ import ListUsers from "./ListUsers/ListUsers";
 export default memo(function Users(props) {
     return (
         <div className={st.users}>
-            <h2 className={st.users__title}>Друзья</h2>
+            <h2 className={st.users__title}>Friends</h2>
             <Paginator 
                 numberCurrentPage={props.numberCurrentPage} 
                 setAjaxAndWriteUser={props.setAjaxAndWriteUser} 

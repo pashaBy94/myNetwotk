@@ -1,8 +1,18 @@
 import { ADD_MESSAG } from "./types";
 
-export const messagAdd = (mes)=> ({type: ADD_MESSAG, mes});
+type messagAddType = {
+    type: typeof ADD_MESSAG,
+    mes: string
+};
 
-const initialState = {
+export const messagAdd = (mes:string):messagAddType => ({type: ADD_MESSAG, mes});
+
+export type initialStateType = {
+    data: Array<object>,
+    messag: Array<object>,
+};
+
+const initialState: initialStateType = {
     data: [
         {name: 'Дима', id: 1},
         {name: 'Саша', id: 2},
@@ -45,7 +55,7 @@ const initialState = {
     ]
 };
 
-export function dialogsPageReducer(state = initialState, action){
+export function dialogsPageReducer(state = initialState, action:any):initialStateType{
     let newState = {...state};
     switch (action.type) {
                 case ADD_MESSAG:{

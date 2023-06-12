@@ -9,6 +9,7 @@ import { initId } from "../../utils/helpers";
 import Players from "./Players/Players";
 
 function MusicItem(props) {
+    console.log(props);
     return (
         <div className={`${st.musics__item} ${(props.ind === props.isPress) ? st.music__current : null}`}>
             <div onClick={() => props.setSound(props.ind)} className={st.music__play}>
@@ -18,9 +19,11 @@ function MusicItem(props) {
             </div>
             <div>{props.el.name}</div>
             <div>
+            <a href={props.el.content} target="_top" download title="Скачать песню">
                 <IconContext.Provider value={{ size: "3em", color: "#4A76A8" }}>
                     <BiDownload />
                 </IconContext.Provider>
+                </a>
             </div>
         </div>
     )
@@ -54,6 +57,7 @@ export default function Musics(props) {
         }
     }
     return (<div className={st.musics} ref={refList}>
+        {/* <a href={props.listMusics[0].content} target="_top" download title="Скачать песню">Скачать песню</a> */}
         {openPlayers?<Players 
         setOpenedPlayers={setOpenedPlayers} 
         setPress={setPress} 

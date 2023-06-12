@@ -5,6 +5,7 @@ import { authUserThank } from "./redux/thankCreator";
 import './App.css';
 import { setInitiallizedThank } from './redux/thankCreator';
 import { compose } from "redux";
+import axios from 'axios';
 import HeaderContainer from './components/Header/HeaderContainer';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
@@ -19,6 +20,8 @@ import SettingsContainer from './components/Settings/Settings';
 import CrossOrZeroContainer from './components/Games/CrossOrZero/CrossOrZeroContainer';
 import { getError } from './redux/selectors';
 import Games from './components/Games/Games';
+import { Navigate } from 'react-router-dom';
+import Video from './components/Video/Video';
 
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const MusicsContainer = React.lazy(() => import('./components/Musics/MusicsContainer'));
@@ -69,8 +72,12 @@ class App extends React.Component {
                   <Route path='/login' element={<LoginContainer />} />
                   <Route path='/settings' element={<SettingsContainer />} />
                   <Route path='/games' element={<Games />} />
+                  <Route path='/videos' element={<Video />} />
                   <Route path='/coz' element={<CrossOrZeroContainer />} />
-                  <Route path='/' element={<ProfileContainer />} />
+                  {/* <Route path='/error' element={<Error />} /> */}
+                  <Route path='/' element={<Navigate replace to="/profile" /> } />
+                  <Route path='*' element={<Error error={this.props.error} /> } />
+
                 </Routes>
               </Suspense>
             </div>
@@ -100,3 +107,4 @@ export default function AppFull() {
     </Provider>
   )
 }
+
