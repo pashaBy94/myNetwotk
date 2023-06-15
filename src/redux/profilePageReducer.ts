@@ -41,7 +41,7 @@ export const savePhoto = (photos:object):savePhotoType =>({type:SAVE_PHOTO, phot
 export const setMyPages = (ev: boolean):setMyPagesType =>({type:IS_MY_PAGES, ev});
 export const updateAboutMyInfo = (info:any):updateAboutMyInfoType => ({type: UPDATE_MY_INFO, info});
 
-type postsDataType = Array<{
+export type postsDataType = Array<{
     post: string,
     id:number,
     likescount: number,
