@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { getTopFriends } from "../../redux/selectors";
+import { getTopFriends } from "../../redux/selectors.ts";
 import Friends from "./Friends";
 import { connect } from "react-redux";
 import { compose } from "redux";

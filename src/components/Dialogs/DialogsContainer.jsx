@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { messagAdd } from "../../redux/dialogsPageReducer.ts";
 import { authUs } from "../../hot/authUs";
 import { compose } from "redux";
-import { getDialodsPageData, getMessag } from "../../redux/selectors";
+import { getDialodsPageData, getMessag } from "../../redux/selectors.ts";
 
 function DialogsContainer({messages, data, messagAdd}){
         return(

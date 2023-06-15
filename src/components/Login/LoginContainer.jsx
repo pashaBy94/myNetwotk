@@ -3,7 +3,7 @@ import Login from "./Login";
 import { connect } from "react-redux";
 import { loginThank, logoutThank, getCaptchaThank } from "../../redux/thankCreator";
 import { Navigate} from "react-router-dom";
-import { getIsAuth, getCaptchaUrl } from "../../redux/selectors";
+import { getIsAuth, getCaptchaUrl } from "../../redux/selectors.ts";
 
 class LoginContainer extends React.Component{
     render(){

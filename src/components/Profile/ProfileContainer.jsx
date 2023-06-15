@@ -2,12 +2,12 @@ import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import { setCurrentProfileThunk, savePhotoThunk, setCurrentStatusThunk, getCurrentStatusThunk, updateInfoProfileThunk } from "../../redux/thankCreator";
-import { setCurrentProfile, setMyPages, setMyProfile } from "../../redux/profilePageReducer";
+import { setCurrentProfile, setMyPages, setMyProfile } from "../../redux/profilePageReducer.ts";
 import { withRouter } from "../../utils/helpers";
 import { compose } from "redux";
 import Preloader from "../general/Preloader/Preloader";
 import { authUs } from "../../hot/authUs";
-import { getCurrentStatus, getAuthenticationId, getSuperCurrentProfile, getIsMyPages, getSuperMyProfile, getError } from "../../redux/selectors";
+import { getCurrentStatus, getAuthenticationId, getSuperCurrentProfile, getIsMyPages, getSuperMyProfile, getError } from "../../redux/selectors.ts";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {

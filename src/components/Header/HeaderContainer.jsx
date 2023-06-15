@@ -3,7 +3,7 @@ import Header from "./Header";
 import { connect } from "react-redux";
 import { authUserThank, logoutThank } from "../../redux/thankCreator";
 import { setAuthUser } from "../../redux/authUserReducer.ts";
-import { getAuthenticationUser, getCurrentStatus, getIsAuth, getSuperMyProfile } from "../../redux/selectors";
+import { getAuthenticationUser, getCurrentStatus, getIsAuth, getSuperMyProfile } from "../../redux/selectors.ts";
 import { withRouter } from "../../utils/helpers";
 
 class HeaderContainer extends React.Component{

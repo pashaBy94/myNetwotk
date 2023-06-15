@@ -1,6 +1,6 @@
 import { setError, setInitiallized } from "./appReducer.ts";
 import { getCaptchaFromStore, setAuthUser, setProfile } from "./authUserReducer.ts";
-import { savePhoto, setCurrentProfile, setCurrentStatus, updateAboutMyInfo } from "./profilePageReducer";
+import { savePhoto, setCurrentProfile, setCurrentStatus, updateAboutMyInfo } from "./profilePageReducer.ts";
 import { userAPI } from "../dal/api";
 import { toggleIsLoader, setUser, setTotalCountPage, follow, unfollow, toggleDisabledFollow, setLengthCountPage } from "./usersPageReducer";
 

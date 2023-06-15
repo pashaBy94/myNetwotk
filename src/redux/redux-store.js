@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, legacy_createStore as createStore} from 'redux';
 import { dialogsPageReducer } from "./dialogsPageReducer.ts";
-import { profilPageReducer } from "./profilePageReducer";
+import { profilPageReducer } from "./profilePageReducer.ts";
 import { usersPageReducer } from './usersPageReducer';
 import { authUserReducer } from './authUserReducer.ts';
 import { appReducer } from './appReducer.ts';

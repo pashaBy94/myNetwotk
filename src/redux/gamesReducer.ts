@@ -40,10 +40,8 @@ export const setNewGameCrossOrZero = ():setNewGameCrossOrZeroType => ({type: SET
 export const setNameRed = (name:string):setNameRedType => ({type: SET_NAME_RED, name});
 export const setNameBlue = (name:string):setNameBlueType => ({type: SET_NAME_BLUE, name});
 
-
-type initialStateType = {
-  crossOrZero:{
-    victoriCombination:Array<Array<number>>,
+export type crossOrZeroType = {
+  victoriCombination:Array<Array<number>>,
     countMove: number,
     currentMove: string,
     currentVictori: string,
@@ -58,6 +56,9 @@ type initialStateType = {
       combinationBlue: any,
   }
 }
+
+type initialStateType = {
+  crossOrZero:crossOrZeroType
 };
 
 const initialState = {

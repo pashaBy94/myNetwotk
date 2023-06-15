@@ -3,8 +3,8 @@ import AboutForm from "../Profile/UserProfile/AboutMy/AboutForm/AboutForm";
 import st from './Settings.module.css'
 import { connect } from "react-redux";
 import { updateInfoProfileThunk, savePhotoThunk, getCurrentStatusThunk, setCurrentStatusThunk, setCurrentProfileThunk } from '../../redux/thankCreator'
-import { setCurrentProfile, setMyPages, setMyProfile } from "../../redux/profilePageReducer";
-import { getCurrentStatus, getAuthenticationId, getSuperCurrentProfile, getIsMyPages, getSuperMyProfile } from "../../redux/selectors";
+import { setCurrentProfile, setMyPages, setMyProfile } from "../../redux/profilePageReducer.ts";
+import { getCurrentStatus, getAuthenticationId, getSuperCurrentProfile, getIsMyPages, getSuperMyProfile } from "../../redux/selectors.ts";
 import Preloader from "../general/Preloader/Preloader";
 import cn from "classnames";
 import { IconContext } from "react-icons";

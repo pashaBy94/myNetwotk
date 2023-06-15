@@ -6,7 +6,7 @@ import { setCurrentPage } from "../../redux/usersPageReducer";
 import Preloader from "../general/Preloader/Preloader";
 import { compose } from "redux";
 import { authUs } from "../../hot/authUs";
-import { getCountUsersPage, getIsDisabledFollowButton, getIsLoader, getLengthCountPage, getNumberCurrentPage, getTotalCountPage, getUsers } from "../../redux/selectors";
+import { getCountUsersPage, getIsDisabledFollowButton, getIsLoader, getLengthCountPage, getNumberCurrentPage, getTotalCountPage, getUsers } from "../../redux/selectors.ts";
 
 class UsersContainer extends React.Component{
     constructor(props){

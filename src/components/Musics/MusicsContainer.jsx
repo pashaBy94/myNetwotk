@@ -2,9 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import Musics from "./Musics";
 import { compose } from "redux";
-import { getListMusics } from "../../redux/selectors";
 import Preloader from "./../general/Preloader/Preloader";
-import { getSuperCurrentProfile } from "../../redux/selectors";
+import { getSuperCurrentProfile, getListMusics } from "../../redux/selectors.ts";
 
 class MusicsContainer extends React.Component {
     componentDidMount() {

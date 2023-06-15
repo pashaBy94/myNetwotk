@@ -1,7 +1,7 @@
-import { postAdd, postsDelete } from "../../../redux/profilePageReducer";
+import { postAdd, postsDelete } from "../../../redux/profilePageReducer.ts";
 import MyPost from "./MyPost";
 import { connect } from "react-redux";
-import { getPostsData } from "../../../redux/selectors";
+import { getPostsData } from "../../../redux/selectors.ts";
 
 const mapStateToProp = state => ({
         postsData: getPostsData(state),

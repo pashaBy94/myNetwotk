@@ -46,3 +46,8 @@ export function appReducer(state = initialState, action:any): initialStateType {
     }
     return newState
 }
+
+
+console.log(initialState.initiallized);
+
+
