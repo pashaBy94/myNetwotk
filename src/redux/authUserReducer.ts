@@ -1,11 +1,12 @@
+import { authStateType } from "../typeAndInterface/typeAndInterface";
 import { SET_AUTH_USER, SET_PROFILE, GET_CAPTCHA } from "./types";
 
 type setAuthUserType = {
 type: typeof SET_AUTH_USER,
 data: {
-    email: string,
-    login: string,
-    id:number,
+    email: string|null,
+    login: string|null,
+    id:number|null,
     isAuth: boolean
 }
 };
@@ -17,26 +18,16 @@ type getCaptchaFromStoreType = {
     type: typeof GET_CAPTCHA,
     urls: string|null
 };
-export type authenticationType = {
-    email: string | null,
-    login: string | null,
-    id: string | number | null
-};
-export type initialStateType = {
-    authentication: authenticationType,
-    isAuth: boolean,
-    profile: object | null,
-    captchaUrl: null | string | object,
-}
 
-export const setAuthUser = (email:string, login:string, id:number, isAuth:boolean):setAuthUserType => ({ type: SET_AUTH_USER, data: { email, login, id, isAuth } });
+
+export const setAuthUser = (email:string|null, login:string|null, id:number|null, isAuth:boolean):setAuthUserType => ({ type: SET_AUTH_USER, data: { email, login, id, isAuth } });
 
 export const setProfile = (profile:object):setProfileType => ({ type: SET_PROFILE, profile });
 
 export const getCaptchaFromStore = (urls:string|null):getCaptchaFromStoreType => ({type: GET_CAPTCHA, urls});
 
 
-const initialState: initialStateType = {
+const initialState: authStateType = {
     authentication: {
         email: null,
         login: null,
@@ -47,7 +38,7 @@ const initialState: initialStateType = {
     captchaUrl: null,
 };
 
-export function authUserReducer(state = initialState, action:any):initialStateType {    
+export function authUserReducer(state = initialState, action:any):authStateType {    
     let newState = { ...state };
     switch (action.type) {
         case SET_AUTH_USER: {

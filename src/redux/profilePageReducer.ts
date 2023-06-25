@@ -1,26 +1,27 @@
+import { profileStateType } from "../typeAndInterface/typeAndInterface";
 import { ADD_POST, SET_CURRENT_PROFILE, SET_MY_PROFILE, IS_MY_PAGES, SAVE_PHOTO, SET_CURRENT_STATUS, DELETE_POST, UPDATE_MY_INFO } from "./types";
 
 type postAddType = {
     type: typeof ADD_POST,
-    mes:string
+    mes: string
 };
 type postsDeleteType = {
     type: typeof DELETE_POST,
-    ids:number
+    ids: number
 }
-type setCurrentProfile = {
+export type setCurrentProfileType = {
     type: typeof SET_CURRENT_PROFILE,
-    profile:object
+    profile: object
 }
 type setMyProfileType = {
     type: typeof SET_MY_PROFILE
 }
 type setCurrentStatusType = {
     type: typeof SET_CURRENT_STATUS,
-    status:string
+    status: string
 }
 type savePhotoType = {
-    photos:object,
+    photos: object,
     type: typeof SAVE_PHOTO
 }
 type setMyPagesType = {
@@ -29,32 +30,21 @@ type setMyPagesType = {
 }
 type updateAboutMyInfoType = {
     type: typeof UPDATE_MY_INFO,
-    info:any
+    info: any
 }
 
-export const postAdd = (mes: string):postAddType => ({ type: ADD_POST, mes });
-export const postsDelete = (ids:number):postsDeleteType => ({ type: DELETE_POST, ids });
-export const setCurrentProfile = (profile:object):setCurrentProfile => ({ type: SET_CURRENT_PROFILE, profile });
-export const setMyProfile = ():setMyProfileType => ({ type: SET_MY_PROFILE });
-export const setCurrentStatus = (status:string):setCurrentStatusType => ({ type: SET_CURRENT_STATUS, status });
-export const savePhoto = (photos:object):savePhotoType =>({type:SAVE_PHOTO, photos});
-export const setMyPages = (ev: boolean):setMyPagesType =>({type:IS_MY_PAGES, ev});
-export const updateAboutMyInfo = (info:any):updateAboutMyInfoType => ({type: UPDATE_MY_INFO, info});
+export const postAdd = (mes: string): postAddType => ({ type: ADD_POST, mes });
+export const postsDelete = (ids: number): postsDeleteType => ({ type: DELETE_POST, ids });
+export const setCurrentProfile = (profile: object): setCurrentProfileType => ({ type: SET_CURRENT_PROFILE, profile });
+export const setMyProfile = (): setMyProfileType => ({ type: SET_MY_PROFILE });
+export const setCurrentStatus = (status: string): setCurrentStatusType => ({ type: SET_CURRENT_STATUS, status });
+export const savePhoto = (photos: object): savePhotoType => ({ type: SAVE_PHOTO, photos });
+export const setMyPages = (ev: boolean): setMyPagesType => ({ type: IS_MY_PAGES, ev });
+export const updateAboutMyInfo = (info: any): updateAboutMyInfoType => ({ type: UPDATE_MY_INFO, info });
 
-export type postsDataType = Array<{
-    post: string,
-    id:number,
-    likescount: number,
-}>
-type initialStateType = {
-    postsData: postsDataType,
-    currentProfile: object|null,
-    currentStatus: string,
-    myProfile:null|object,
-    isMyPages:boolean
-}
 
-const initialState:initialStateType = {
+
+const initialState: profileStateType = {
     postsData: [
         { post: 'Все ок, javaScript и HTML5 an do!', id: 1, likescount: 11 },
         { post: 'Все ', id: 2, likescount: 11 },
@@ -67,8 +57,8 @@ const initialState:initialStateType = {
     isMyPages: false,
 };
 
-export function profilPageReducer(state = initialState, action:any):initialStateType {
-    let newState:initialStateType = {...state};
+export function profilPageReducer(state = initialState, action: any): profileStateType {
+    let newState: profileStateType = { ...state };
     switch (action.type) {
         case ADD_POST: {
             if (action.mes !== '') {
@@ -79,7 +69,7 @@ export function profilPageReducer(state = initialState, action:any):initialState
             break;
         }
         case DELETE_POST: {
-                newState.postsData = state.postsData.filter((el):boolean=>el.id !== action.ids);
+            newState.postsData = state.postsData.filter((el): boolean => el.id !== action.ids);
             break;
         }
         case SET_CURRENT_PROFILE: {
@@ -91,12 +81,12 @@ export function profilPageReducer(state = initialState, action:any):initialState
             break;
         }
         case SET_CURRENT_STATUS: {
-            newState.currentStatus = action.status?action.status:'';
+            newState.currentStatus = action.status ? action.status : '';
             break;
         }
         case SAVE_PHOTO: {
-            newState.currentProfile = {...newState.currentProfile, photos: {...action.photos}};    
-            newState.myProfile = {...newState.myProfile, photos: {...action.photos}};        
+            newState.currentProfile = { ...newState.currentProfile, photos: { ...action.photos } };
+            newState.myProfile = { ...newState.myProfile, photos: { ...action.photos } };
             break;
         }
         case IS_MY_PAGES: {
@@ -104,11 +94,10 @@ export function profilPageReducer(state = initialState, action:any):initialState
             break;
         }
         case UPDATE_MY_INFO: {
-            newState.currentProfile = {...state.currentProfile ,...action.info};
-            console.log(newState.currentProfile);
+            newState.currentProfile = { ...state.currentProfile, ...action.info };
             break;
         }
-        default: {}
+        default: { }
     }
     return newState;
 }

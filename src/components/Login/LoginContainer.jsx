@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./Login";
 import { connect } from "react-redux";
-import { loginThank, logoutThank, getCaptchaThank } from "../../redux/thankCreator";
+import { loginThank, logoutThank, getCaptchaThank } from "../../redux/thankCreator.ts";
 import { Navigate} from "react-router-dom";
 import { getIsAuth, getCaptchaUrl } from "../../redux/selectors.ts";
 

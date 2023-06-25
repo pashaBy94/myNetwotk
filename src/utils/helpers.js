@@ -15,7 +15,7 @@ export const listComponentWritePosts = (list, Elem) => {
   return result.reverse().map(el => <Elem post={el.post} id={el.id} likescount={el.likescount} postsDelete={list.postsDelete} key={initId()} />);
 }
 
-export const listComponentWriteUsers = (list, Elem) => list.users.map(el => <Elem key={initId()} user={el} thunkAddFollow={list.thunkAddFollow} thunkUnFollow={list.thunkUnFollow} addUser={list.addUser} isDisabledFollowButton={list.isDisabledFollowButton} />);
+export const listComponentWriteUsers = (list, Elem) => list.users.map(el => <Elem key={initId()} user={el} thunkAddFollow={list.thunkAddFollow} thunkUnFollow={list.thunkUnFollow} isDisabledFollowButton={list.isDisabledFollowButton} />);
 
 export function withRouter(Component) {
   function ComponentWithRouterProp(props) {

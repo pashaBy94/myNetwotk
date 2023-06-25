@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
-import { authUserThank, logoutThank } from "../../redux/thankCreator";
+import { authUserThank, logoutThank } from "../../redux/thankCreator.ts";
 import { setAuthUser } from "../../redux/authUserReducer.ts";
 import { getAuthenticationUser, getCurrentStatus, getIsAuth, getSuperMyProfile } from "../../redux/selectors.ts";
 import { withRouter } from "../../utils/helpers";

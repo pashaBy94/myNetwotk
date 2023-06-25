@@ -1,14 +1,14 @@
 import React, { Suspense } from 'react';
 import './styles/App.css';
 import { connect, Provider } from "react-redux";
-import { authUserThank } from "./redux/thankCreator";
+import { authUserThank } from "./redux/thankCreator.ts";
 import './App.css';
-import { setInitiallizedThank } from './redux/thankCreator';
+import { setInitiallizedThank } from './redux/thankCreator.ts';
 import { compose } from "redux";
 import HeaderContainer from './components/Header/HeaderContainer';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
-import News from './components/News/News';
+import NewsContainer from './components/News/NewsContainer';
 import Error from './components/Error/Error';
 import { store } from './redux/redux-store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -66,17 +66,15 @@ class App extends React.Component {
                   <Route path='/profile/:usId?' element={<ProfileContainer />} />
                   <Route path='/dialogs' element={<DialogsContainer />} />
                   <Route path='/users' element={<UsersContainer />} />
-                  <Route path='/news' element={<News />} />
+                  <Route path='/news' element={<NewsContainer />} />
                   <Route path='/musics' element={<MusicsContainer />} />
                   <Route path='/login' element={<LoginContainer />} />
                   <Route path='/settings' element={<SettingsContainer />} />
                   <Route path='/games' element={<Games />} />
                   <Route path='/videos' element={<Video />} />
                   <Route path='/coz' element={<CrossOrZeroContainer />} />
-                  {/* <Route path='/error' element={<Error />} /> */}
                   <Route path='/' element={<Navigate replace to="/profile" /> } />
                   <Route path='*' element={<Error error={this.props.error} /> } />
-
                 </Routes>
               </Suspense>
             </div>
