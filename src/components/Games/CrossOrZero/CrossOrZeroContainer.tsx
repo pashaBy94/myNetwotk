@@ -2,10 +2,35 @@ import React from "react";
 import CrossOrZero from "./CrossOrZero";
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue } from "../../../redux/gamesReducer.ts";
-import { getCountMove, getCurrentMove, getCombinationRed, getCombinationBlue, getCurrentVictoriCrossOrZero, getVictoriRed, getVictoriBlue, getNameBlue, getNameRed } from "../../../redux/selectors.ts";
+import { setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue } from "../../../redux/gamesReducer";
+import { getCountMove, getCurrentMove, getCombinationRed, getCombinationBlue, getCurrentVictoriCrossOrZero, getVictoriRed, getVictoriBlue, getNameBlue, getNameRed } from "../../../redux/selectors";
+import { GlobalStateType } from "../../../typeAndInterface/typeAndInterface";
 
-class CrossOrZeroContainer extends React.Component{
+type CrossStateType = {
+    countMove: number;
+    currentMove: string;
+    combinationRed: any;
+    combinationBlue: any;
+    currentVictori: string;
+    victoriRed: number;
+    victoriBlue: number;
+    nameRed: string;
+    nameBlue: string;
+    examination?: any;
+}
+type CrossDispatchType = {
+    setCurrentMove:any,
+    setCombinationRed:any, 
+    setCombinationBlue:any, 
+    crossOrZeroExamination:any, 
+    setNewGameCrossOrZero:any, 
+    setNameRed:any, 
+    setNameBlue:any
+}
+type PropType = {};
+export type CrossOrZeroType = CrossStateType & CrossDispatchType & PropType;
+
+class CrossOrZeroContainer extends React.Component<CrossOrZeroType>{
     render(){
         return(
             <CrossOrZero 
@@ -31,7 +56,7 @@ class CrossOrZeroContainer extends React.Component{
         }
     }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state:GlobalStateType) => ({
     countMove: getCountMove(state),
     currentMove: getCurrentMove(state),
     combinationRed: getCombinationRed(state),
@@ -43,4 +68,4 @@ const mapStateToProps = state => ({
     nameBlue: getNameBlue(state)
     });
 
-export default compose(connect(mapStateToProps, {setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue}))(CrossOrZeroContainer) 
+export default compose(connect<CrossStateType, CrossDispatchType, PropType, GlobalStateType>(mapStateToProps, {setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue}))(CrossOrZeroContainer) 

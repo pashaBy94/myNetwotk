@@ -108,5 +108,5 @@
   ],
   "include": [
     "src/**/*.ts"
-, "src/redux/musicReducer.ts"  ]
+, "src/redux/musicReducer.ts", "src/components/Musics/sound/sound.js"  ]
 }

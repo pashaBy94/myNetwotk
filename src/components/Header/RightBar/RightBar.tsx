@@ -1,12 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { HeaderPropType } from "../HeaderContainer";
 import st from './RightBar.module.css'
 import UserBar from "./UserBar/UserBar";
 
-export default function RightBar({props}){
+type PropType = {props: HeaderPropType}
+const RightBar:FC<PropType> = ({props})=>{
 
-function openBar(ev){
+function openBar(ev: React.MouseEvent<HTMLButtonElement>):void{
   ev.preventDefault();
   toggleBar(pr=>!pr);
 }
@@ -26,3 +28,4 @@ function openBar(ev){
       </div>
       )
 }
+export default RightBar;

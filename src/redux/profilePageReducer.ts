@@ -1,4 +1,4 @@
-import { profileStateType } from "../typeAndInterface/typeAndInterface";
+import { PhotoType, profileStateType, profileType } from "../typeAndInterface/typeAndInterface";
 import { ADD_POST, SET_CURRENT_PROFILE, SET_MY_PROFILE, IS_MY_PAGES, SAVE_PHOTO, SET_CURRENT_STATUS, DELETE_POST, UPDATE_MY_INFO } from "./types";
 
 type postAddType = {
@@ -11,7 +11,7 @@ type postsDeleteType = {
 }
 export type setCurrentProfileType = {
     type: typeof SET_CURRENT_PROFILE,
-    profile: object
+    profile: profileType
 }
 type setMyProfileType = {
     type: typeof SET_MY_PROFILE
@@ -21,7 +21,7 @@ type setCurrentStatusType = {
     status: string
 }
 type savePhotoType = {
-    photos: object,
+    photos: PhotoType,
     type: typeof SAVE_PHOTO
 }
 type setMyPagesType = {
@@ -35,14 +35,15 @@ type updateAboutMyInfoType = {
 
 export const postAdd = (mes: string): postAddType => ({ type: ADD_POST, mes });
 export const postsDelete = (ids: number): postsDeleteType => ({ type: DELETE_POST, ids });
-export const setCurrentProfile = (profile: object): setCurrentProfileType => ({ type: SET_CURRENT_PROFILE, profile });
+export const setCurrentProfile = (profile: profileType): setCurrentProfileType => ({ type: SET_CURRENT_PROFILE, profile });
 export const setMyProfile = (): setMyProfileType => ({ type: SET_MY_PROFILE });
 export const setCurrentStatus = (status: string): setCurrentStatusType => ({ type: SET_CURRENT_STATUS, status });
-export const savePhoto = (photos: object): savePhotoType => ({ type: SAVE_PHOTO, photos });
+export const savePhoto = (photos: PhotoType): savePhotoType => ({ type: SAVE_PHOTO, photos });
 export const setMyPages = (ev: boolean): setMyPagesType => ({ type: IS_MY_PAGES, ev });
 export const updateAboutMyInfo = (info: any): updateAboutMyInfoType => ({ type: UPDATE_MY_INFO, info });
 
-
+export type actionProfileType = postAddType | postsDeleteType | setCurrentProfileType | setMyProfileType |
+setCurrentStatusType | savePhotoType | setMyPagesType | updateAboutMyInfoType;
 
 const initialState: profileStateType = {
     postsData: [
@@ -57,7 +58,7 @@ const initialState: profileStateType = {
     isMyPages: false,
 };
 
-export function profilPageReducer(state = initialState, action: any): profileStateType {
+export function profilPageReducer(state = initialState, action: actionProfileType): profileStateType {
     let newState: profileStateType = { ...state };
     switch (action.type) {
         case ADD_POST: {

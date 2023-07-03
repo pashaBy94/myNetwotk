@@ -1,7 +1,10 @@
 import React from "react";
-import st from './NavBar.module.css'
+import st from './NavBar.module.css';
 import { NavLink } from "react-router-dom";
-export default class NavBar extends React.Component{
+
+type PropsType = {};
+
+export default class NavBar extends React.Component<PropsType>{
     render(){
         return(
             <nav className={st.nav}>

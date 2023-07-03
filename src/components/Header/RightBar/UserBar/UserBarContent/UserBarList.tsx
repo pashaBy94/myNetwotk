@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import st from './UserBarContent.module.css'
 
 export default function UserBarContent({logoutThank, toggleBar}){
-  const quitProfile = (e)=>{
+  const quitProfile = (e: React.MouseEvent<HTMLElement>)=>{
     e.preventDefault();
     logoutThank();
     toggleBar(false);

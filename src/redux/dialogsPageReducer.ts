@@ -8,7 +8,7 @@ type messagAddType = {
 
 export const messagAdd = (mes:string):messagAddType => ({type: ADD_MESSAG, mes});
 
-
+export type actionMessagType = messagAddType;
 
 const initialState: stateDialogsType = {
     data: [
@@ -53,7 +53,7 @@ const initialState: stateDialogsType = {
     ]
 };
 
-export function dialogsPageReducer(state = initialState, action:any):stateDialogsType{
+export function dialogsPageReducer(state = initialState, action:actionMessagType):stateDialogsType{
     let newState = {...state};
     switch (action.type) {
                 case ADD_MESSAG:{

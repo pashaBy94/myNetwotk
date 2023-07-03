@@ -35,6 +35,9 @@ type toggleDisabledFollowType = {
     isLoad: boolean,
 };
 
+export type ActionUserType = followType | unfollowType | setUserType | setTotalCountPageType |
+    setLengthCountPageType | setCurrentPageType | toggleIsLoaderType | toggleDisabledFollowType;
+
 export const follow = (id: number):followType => ({ type: FOLLOW, id });
 export const unfollow = (id:number):unfollowType => ({ type: UNFOLLOW, id });
 export const setUser = (us:Array<any>): setUserType => ({ type: SET_USERS, us });
@@ -44,7 +47,7 @@ export const setCurrentPage = (currentPage:number):setCurrentPageType => ({ type
 export const toggleIsLoader = (propLoader:boolean):toggleIsLoaderType => ({ type: TOGGLE_ISLOADER, propLoader });
 export const toggleDisabledFollow = (id:number, isLoad:boolean):toggleDisabledFollowType => ({ type: TOGGLE_DISABLED_FOLLOW, id, isLoad });
 
-const initialState:initialStateType = {
+const initialState:initialUserStateType = {
     users: [],
     numberCurrentPage: 1,
     countUsersPage: 10,
@@ -53,7 +56,7 @@ const initialState:initialStateType = {
     isLoader: true,
     isDisabledFollowButton: [],
 };
-type initialStateType = {
+export type initialUserStateType = {
     users: Array<any>,
     numberCurrentPage: number,
     countUsersPage: number,
@@ -63,7 +66,7 @@ type initialStateType = {
     isDisabledFollowButton: Array<number>,
 };
 
-export function usersPageReducer(state = initialState, action:any):initialStateType {
+export function usersPageReducer(state = initialState, action:ActionUserType):initialUserStateType {
     let newState = { ...state };
     switch (action.type) {
         case FOLLOW: {

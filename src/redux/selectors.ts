@@ -1,7 +1,7 @@
-import { authenticationType, GlobalStateType, MessagType, postsDataType, profileType, UsersType } from "../typeAndInterface/typeAndInterface";
+import { authenticationType, FriendPropType, GlobalStateType, MessagType, postsDataType, profileType, SountItemType, UsersType } from "../typeAndInterface/typeAndInterface";
 
 export const getSuperCurrentProfile = (state:GlobalStateType):profileType|null => state.profilePage.currentProfile;
-export const getSuperMyProfile = (state:GlobalStateType):object|null => state.profilePage.myProfile;
+export const getSuperMyProfile = (state:GlobalStateType):profileType|null => state.profilePage.myProfile;
 export const getCurrentStatus = (state:GlobalStateType):string => state.profilePage.currentStatus;
 export const getAuthenticationId = (state:GlobalStateType):number|null => state.authUser.authentication.id;
 export const getMessag = (state:GlobalStateType):Array<MessagType> => state.dialogsPage.messag;
@@ -17,11 +17,11 @@ export const getTotalCountPage = (state:GlobalStateType):number => state.usersPa
 export const getLengthCountPage = (state:GlobalStateType):Array<Array<number>|[]> => state.usersPage.lengthCountPage;
 export const getIsLoader = (state:GlobalStateType):boolean => state.usersPage.isLoader;
 export const getIsDisabledFollowButton = (state:GlobalStateType):Array<number> => state.usersPage.isDisabledFollowButton;
-export const getTopFriends = (state:GlobalStateType):Array<Object> => state.app.topFriends;
+export const getTopFriends = (state:GlobalStateType):Array<FriendPropType> => state.app.topFriends;
 export const getIsMyPages = (state:GlobalStateType):boolean => state.profilePage.isMyPages;
 export const getCaptchaUrl = (state:GlobalStateType):null|string => state.authUser.captchaUrl;
 export const getError = (state:GlobalStateType):object|null => state.app.error;
-export const getListMusics = (state:GlobalStateType):Array<object> => state.musicPage.listMusics;
+export const getListMusics = (state:GlobalStateType):Array<SountItemType> => state.musicPage.listMusics;
 export const getCurrentMove = (state:GlobalStateType):string => state.games.crossOrZero.currentMove;
 export const getCountMove = (state:GlobalStateType):number => state.games.crossOrZero.countMove;
 export const getCombinationRed = (state:GlobalStateType):any => state.games.crossOrZero.red.combinationRed;

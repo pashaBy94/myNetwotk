@@ -2,25 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import Musics from "./Musics";
 import { compose } from "redux";
-import Preloader from "./../general/Preloader/Preloader";
-import { getSuperCurrentProfile, getListMusics } from "../../redux/selectors.ts";
+import Preloader from "../general/Preloader/Preloader";
+import { GlobalStateType, MusicStateType } from "../../typeAndInterface/typeAndInterface";
+import { getListMusics } from "../../redux/selectors";
 
-class MusicsContainer extends React.Component {
-    componentDidMount() {
 
-    }
-    componentDidUpdate(prevProp) {
-
-    }
+class MusicsContainer extends React.Component<MusicStateType> {
     render() {
         if (!this.props.listMusics) return <Preloader />
         return (<Musics listMusics={this.props.listMusics} />)
     }
 }
 
-const mapStateToProp = state => ({
+const mapStateToProp = (state: GlobalStateType): MusicStateType => ({
     listMusics: getListMusics(state),
-    listTest: getSuperCurrentProfile(state),
 });
 
 export default compose(

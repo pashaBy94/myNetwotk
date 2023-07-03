@@ -41,6 +41,9 @@ export const setNewGameCrossOrZero = (): setNewGameCrossOrZeroType => ({ type: S
 export const setNameRed = (name: string): setNameRedType => ({ type: SET_NAME_RED, name });
 export const setNameBlue = (name: string): setNameBlueType => ({ type: SET_NAME_BLUE, name });
 
+export type actionGameType = setCurrentMoveType | setCombinationRedType | setCombinationBlueType |
+  crossOrZeroExaminationType | setCurrentVictoriType | setNewGameCrossOrZeroType | setNameRedType |
+  setNameBlueType;
 const initialState = {
   crossOrZero: {
     victoriCombination: [
@@ -63,7 +66,7 @@ const initialState = {
   }
 };
 
-export function gamesReducer(state = initialState, action: any): gamesStateType {
+export function gamesReducer(state = initialState, action: actionGameType): gamesStateType {
   let newState: gamesStateType = structuredClone(state);
   switch (action.type) {
     case SET_CURRENT_MOVE: {

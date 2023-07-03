@@ -1,10 +1,22 @@
-import React from "react";
+import React, { FC } from "react";
 import { AiFillPlayCircle, AiFillPauseCircle, AiOutlineCloseCircle } from "react-icons/ai"; // иконки для воспроизведения и паузы
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
 import st from './Players.module.css';
 
-export default function Players(props) {
+type PlayersType = {
+  setOpenedPlayers: any,
+  setPress: any,
+  play: any,
+  pause: any,
+  duration: any,
+  sound: any,
+  setIsPlaying: any,
+  isPlaying: boolean,
+  maxCount: number
+};
+
+const Players: FC<PlayersType> = (props) => {
   const playingButton = () => {
     if (props.isPlaying) {
       props.pause();
@@ -14,17 +26,17 @@ export default function Players(props) {
       props.setIsPlaying(true);
     }
   };
-  const previusSound = () => {
-    props.setPress(pr => Math.max((pr - 1), 0))
+  const previusSound = ():void => {
+    props.setPress((pr: null | number) => Math.max(((pr || 0) - 1), 0));
     props.pause();
     props.setIsPlaying(false);
   }
-  const nextSound = () => {
-    props.setPress(pr => Math.min((pr + 1), props.maxCount - 1))
+  const nextSound = ():void => {
+    props.setPress((pr: null | number) => Math.min(((pr || 0) + 1), props.maxCount - 1));
     props.pause();
     props.setIsPlaying(false);
   }
-  const closen = () => {
+  const closen = ():void => {
     props.setOpenedPlayers(false);
     props.pause();
     props.setPress(null);
@@ -81,5 +93,5 @@ export default function Players(props) {
       </div>
     </div>
   );
-
 }
+export default Players;

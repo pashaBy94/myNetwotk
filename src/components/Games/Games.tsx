@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import st from './Games.module.css'
 
-
 export default function Games(){
 
     return(

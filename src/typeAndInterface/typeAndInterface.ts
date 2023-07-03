@@ -18,9 +18,17 @@ export type stateDialogsType = {
     data: Array<DialogsType>,
     messag: Array<MessagType>,
 };
+export type FriendPropType = {
+    id: string,
+    img:string,
+    name:string,
+};
+export type FriendsPropType = {
+    topFriends: Array<FriendPropType>;
+}
 export type appStateType = {
     initiallized: boolean,
-    topFriends: Array<Object>
+    topFriends: Array<FriendPropType>
     error: null | Object
 }
 export type authenticationType = {
@@ -31,7 +39,7 @@ export type authenticationType = {
 export type authStateType = {
     authentication: authenticationType,
     isAuth: boolean,
-    profile: object | null,
+    profile: profileType | null,
     captchaUrl: null | string,
 }
 type crossOrZeroType = {
@@ -60,13 +68,14 @@ export type postsDataType = Array<{
     id: number,
     likescount: number,
 }>
+export type PhotoType = { large: string | null, small: string | null } | null;
 export type profileType = {
     aboutMe: string,
     fullName: string,
     lookingForAJob: boolean,
     lookingForAJobDescription: string,
     userId: number,
-    photos: { large: string | null, small: string | null } | null,
+    photos: PhotoType,
     contacts: { facebook: string, github: string, instagram: string, mainLink: string, twitter: string, vk: string, website: string, youtube: string }
 };
 export type profileStateType = {
@@ -77,14 +86,13 @@ export type profileStateType = {
     isMyPages: boolean
 }
 
-type SountItemType = {
-    content: typeof qala,
+export type SountItemType = {
+    content: undefined | typeof qala,
     name: string
 };
 export type MusicStateType = {
 listMusics: Array<SountItemType>
 };
-
 
 export type UsersType = {
     follower: boolean,

@@ -2,7 +2,7 @@ import React from "react";
 import st from './UserBarContent.module.css'
 import UserBarList from './UserBarList';
 
-export default function UserBarContent({props}){
+const UserBarContent = ({props})=>{
   if(!props.stateBar) return null
         return(
               <div className={st.header__right__menu}>
@@ -10,3 +10,4 @@ export default function UserBarContent({props}){
               </div>
               )  
     }
+export default UserBarContent;
