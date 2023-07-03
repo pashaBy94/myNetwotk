@@ -9,7 +9,6 @@ const UserProfile: FC<PropProfyleType> = ({ profile, status, setCurrentStatusThu
   function getPhoto(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files)
       savePhotoThunk(e.target.files[0]);
-      // console.log(e.target.files);
       
   }
   if (!myProfile) return <Preloader />
