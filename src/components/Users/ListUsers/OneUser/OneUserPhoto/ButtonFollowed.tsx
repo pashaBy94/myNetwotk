@@ -3,10 +3,10 @@ import { PropOneUsType } from "../../../../../typeAndInterface/typeAndInterface"
 import st from "./OneUserPhoto.module.css"
 
 const ButtonFollowed:FC<{props:PropOneUsType}> = ({props})=>{
-  const {id, follower} = props.user;
+  const {id, followed} = props.user;
   return <button 
           className={st.user__followed} 
-          disabled={props.isDisabledFollowButton.includes(id)} onClick={()=> follower?props.thunkUnFollow(id):props.thunkAddFollow(id)}
-        >{follower?'Unfollower':'Follower'}</button>
+          disabled={props.isDisabledFollowButton.includes(id)} onClick={()=> followed?props.thunkUnFollow(id):props.thunkAddFollow(id)}
+        >{followed?'Unfollower':'Follower'}</button>
 }
 export default ButtonFollowed;

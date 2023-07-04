@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import st from './Login.module.css'
-import { Formik } from 'formik';
+import { Formik, FormikProps } from 'formik';
 import { validate } from "../validators/validForm";
 import ReCAPTCHA from 'react-google-recaptcha';
 import { validStatus } from "../validators/validForm";
@@ -20,6 +20,16 @@ type CaptchaPropType = {
     captchaUrl: string | null,
     getCaptchaThank: any,
 };
+type FormValuesType = {
+    login: string;
+    password: string;
+    rememberMe: boolean;
+    responseCaptcha: string;
+};
+type OtherProps = {
+
+};
+
 const CaptchFromServer: FC<CaptchaPropType> = (props) => {
     return (
         <div className={st.capcha}>
@@ -62,7 +72,7 @@ const LoginForm: FC<LoginPropType> = (props) => {
                 props.loginThank(val.login, val.password, val.rememberMe, val.responseCaptcha, setSubmit.setStatus, setNoFail);
             }}
         >
-            {(formik) => {
+            {(formik:FormikProps<FormValuesType>):React.JSX.Element => {
                 return (
                     <form onSubmit={formik.handleSubmit} className={st.form__login}>
                         <h3 className={st.form__login_title}>You must log in</h3>

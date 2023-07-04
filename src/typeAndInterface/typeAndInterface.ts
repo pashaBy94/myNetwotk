@@ -95,7 +95,7 @@ listMusics: Array<SountItemType>
 };
 
 export type UsersType = {
-    follower: boolean,
+    followed: boolean,
     id: number,
     name: string,
     photos: { small: string | null, large: string | null },

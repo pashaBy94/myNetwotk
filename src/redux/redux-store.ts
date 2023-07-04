@@ -18,5 +18,8 @@ export const reducers = combineReducers({
     musicPage: musicReducer,
     games: gamesReducer,
 });
+type PropertiesType<T> = T extends {[key:string]: infer U}?U:never;
+export type ActionsType<T extends {[key:string]: (...args:Array<any>)=>any}> = ReturnType<PropertiesType<T>> 
+
 
 export const store = createStore(reducers, applyMiddleware(thunkMiddleware));

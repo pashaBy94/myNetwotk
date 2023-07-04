@@ -1,6 +1,7 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export const followUnfollowHelper = (users, id, desc) => {
+  console.log(users,id,desc);
   let el = users.find(us => us.id === id);
   el.followed = desc;
 }

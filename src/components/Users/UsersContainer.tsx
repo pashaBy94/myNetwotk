@@ -10,7 +10,7 @@ import { getCountUsersPage, getIsDisabledFollowButton, getIsLoader, getLengthCou
 import { GlobalStateType } from "../../typeAndInterface/typeAndInterface";
 
 export type UsersType = {
-    follower: boolean,
+    followed: boolean,
     id: number,
     name: string,
     photos: { small: string | null, large: string | null },
@@ -69,7 +69,6 @@ class UsersContainer extends React.Component<PropsType>{
     }
 }
 
-
 const mapStateToProps = (state: GlobalStateType): PropsStateType => {
     return ({
         users: getUsers(state),
@@ -82,4 +81,4 @@ const mapStateToProps = (state: GlobalStateType): PropsStateType => {
     })
 };
 
-export default compose(connect<PropsStateType, PropsDispatchType, PropType, GlobalStateType>(mapStateToProps, { setCurrentPage, thunkAddUsers, thunkAddNextUsers, thunkAddFollow, thunkUnFollow }), authUs)(UsersContainer)
+export default compose(connect(mapStateToProps, { setCurrentPage, thunkAddUsers, thunkAddNextUsers, thunkAddFollow, thunkUnFollow }), authUs)(UsersContainer)

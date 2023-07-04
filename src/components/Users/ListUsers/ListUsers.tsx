@@ -9,8 +9,6 @@ type PropType = {
     props: PropsType
 };
 const ListUsers:FC<PropType> = ({ props })=> {
-    console.log(props);
-    
     const [isBtn, setIsBtn] = useState<boolean>(false);
     const refList = useRef<HTMLDivElement>(null);
     useEffect(()=>{

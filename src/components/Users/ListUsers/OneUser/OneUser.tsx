@@ -6,6 +6,7 @@ import { PropOneUsType } from "../../../../typeAndInterface/typeAndInterface";
 
 
 const OneUser:FC<PropOneUsType> = (props)=>{
+    
     return (
         <div className={st.users__point}>
             <OneUserPhoto props={props}/>
