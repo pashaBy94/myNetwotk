@@ -2,9 +2,10 @@ import React from "react";
 import CrossOrZero from "./CrossOrZero";
 import { compose } from "redux";
 import { connect } from "react-redux";
-import { setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue } from "../../../redux/gamesReducer";
+import { actionsGames } from "../../../redux/gamesReducer";
 import { getCountMove, getCurrentMove, getCombinationRed, getCombinationBlue, getCurrentVictoriCrossOrZero, getVictoriRed, getVictoriBlue, getNameBlue, getNameRed } from "../../../redux/selectors";
 import { GlobalStateType } from "../../../typeAndInterface/typeAndInterface";
+import { actionsApp } from "../../../redux/appReducer";
 
 type CrossStateType = {
     countMove: number;
@@ -67,5 +68,4 @@ const mapStateToProps = (state:GlobalStateType) => ({
     nameRed: getNameRed(state),
     nameBlue: getNameBlue(state)
     });
-
-export default compose(connect<CrossStateType, CrossDispatchType, PropType, GlobalStateType>(mapStateToProps, {setCurrentMove, setCombinationRed, setCombinationBlue, crossOrZeroExamination, setNewGameCrossOrZero, setNameRed, setNameBlue}))(CrossOrZeroContainer) 
+export default compose(connect<CrossStateType, CrossDispatchType, PropType, GlobalStateType>(mapStateToProps, {...actionsGames}))(CrossOrZeroContainer) 

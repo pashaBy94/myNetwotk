@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
 import { authUserThank, logoutThank } from "../../redux/thankCreator";
-import { setAuthUser } from "../../redux/authUserReducer";
+import { actionsAuth } from "../../redux/authUserReducer";
 import { getAuthenticationUser, getCurrentStatus, getIsAuth, getSuperMyProfile } from "../../redux/selectors";
 import { withRouter } from "../../utils/helpers";
 import { authenticationType, GlobalStateType, profileType } from "../../typeAndInterface/typeAndInterface";
@@ -34,5 +34,5 @@ const mapStateToProp = (state: GlobalStateType) => ({
     myProfile: getSuperMyProfile(state),
     currentStatus: getCurrentStatus(state),
 });
-
-export default withRouter(connect(mapStateToProp, { setAuthUser, authUserThank, logoutThank })(HeaderContainer))
+const setAuthUser = actionsAuth.setAuthUser;
+export default withRouter(connect(mapStateToProp, { setAuthUser , authUserThank, logoutThank })(HeaderContainer))

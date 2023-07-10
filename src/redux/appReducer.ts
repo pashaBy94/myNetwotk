@@ -13,12 +13,12 @@ export type setErrorType = {
     error: object | string,
     type: typeof SET_ERROR
 };
-export const actions = {
+export const actionsApp = {
     setInitiallized: () => ({ type: SET_INITIALLIZED } as const),
     setTopFriends: (list: Array<FriendPropType>)=> ({ type: SET_TOP_FRIENDS, list } as const),
     setError: (error: string | object) => ({ type: SET_ERROR, error } as const),
 };
-export type ActionsAppType = ActionsType<typeof actions>;
+export type ActionsAppType = ActionsType<typeof actionsApp>;
 // export const setInitiallized = (): setInitiallizedType => ({ type: SET_INITIALLIZED });
 // export const setTopFriends = (list: Array<FriendPropType>): setTopFriendsType => ({ type: SET_TOP_FRIENDS, list });
 // export const setError = (error: string | object): setErrorType => ({ type: SET_ERROR, error });

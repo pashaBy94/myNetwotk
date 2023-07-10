@@ -26,9 +26,7 @@ type FormValuesType = {
     rememberMe: boolean;
     responseCaptcha: string;
 };
-type OtherProps = {
 
-};
 
 const CaptchFromServer: FC<CaptchaPropType> = (props) => {
     return (

@@ -43,7 +43,7 @@ export const setMyPages = (ev: boolean): setMyPagesType => ({ type: IS_MY_PAGES,
 export const updateAboutMyInfo = (info: any): updateAboutMyInfoType => ({ type: UPDATE_MY_INFO, info });
 
 export type actionProfileType = postAddType | postsDeleteType | setCurrentProfileType | setMyProfileType |
-setCurrentStatusType | savePhotoType | setMyPagesType | updateAboutMyInfoType;
+    setCurrentStatusType | savePhotoType | setMyPagesType | updateAboutMyInfoType;
 
 const initialState: profileStateType = {
     postsData: [

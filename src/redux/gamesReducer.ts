@@ -1,4 +1,5 @@
 import { gamesStateType } from "../typeAndInterface/typeAndInterface";
+import { ActionsType } from "./redux-store";
 import { SET_CURRENT_MOVE, SET_COMBINATION_RED, SET_COMBINATION_BLUE, CROSS_OR_ZERO_EXAMINATION, SET_NAME_BLUE, SET_NAME_RED, SET_CURRENT_VICTORI, SET_NEW_GAME_COZ } from "./types";
 
 type setCurrentMoveType = {
@@ -32,18 +33,18 @@ type setNameBlueType = {
   name: string
 };
 
-export const setCurrentMove = (current: string): setCurrentMoveType => ({ type: SET_CURRENT_MOVE, current });
-export const setCombinationRed = (num: number | never): setCombinationRedType => ({ type: SET_COMBINATION_RED, num });
-export const setCombinationBlue = (num: number | never): setCombinationBlueType => ({ type: SET_COMBINATION_BLUE, num });
-export const crossOrZeroExamination = (): crossOrZeroExaminationType => ({ type: CROSS_OR_ZERO_EXAMINATION });
-export const setCurrentVictori = (name: string): setCurrentVictoriType => ({ type: SET_CURRENT_VICTORI, name });
-export const setNewGameCrossOrZero = (): setNewGameCrossOrZeroType => ({ type: SET_NEW_GAME_COZ });
-export const setNameRed = (name: string): setNameRedType => ({ type: SET_NAME_RED, name });
-export const setNameBlue = (name: string): setNameBlueType => ({ type: SET_NAME_BLUE, name });
+export const actionsGames = {
+  setCurrentMove: (current: string): setCurrentMoveType => ({ type: SET_CURRENT_MOVE, current } as const),
+  setCombinationRed: (num: number | never): setCombinationRedType => ({ type: SET_COMBINATION_RED, num } as const),
+  setCombinationBlue: (num: number | never): setCombinationBlueType => ({ type: SET_COMBINATION_BLUE, num } as const),
+  crossOrZeroExamination: (): crossOrZeroExaminationType => ({ type: CROSS_OR_ZERO_EXAMINATION } as const),
+  setCurrentVictori: (name: string): setCurrentVictoriType => ({ type: SET_CURRENT_VICTORI, name } as const),
+  setNewGameCrossOrZero: (): setNewGameCrossOrZeroType => ({ type: SET_NEW_GAME_COZ } as const),
+  setNameRed: (name: string): setNameRedType => ({ type: SET_NAME_RED, name } as const),
+  setNameBlue: (name: string): setNameBlueType => ({ type: SET_NAME_BLUE, name } as const),
+};
 
-export type actionGameType = setCurrentMoveType | setCombinationRedType | setCombinationBlueType |
-  crossOrZeroExaminationType | setCurrentVictoriType | setNewGameCrossOrZeroType | setNameRedType |
-  setNameBlueType;
+  export type actionGameType = ActionsType<typeof actionsGames>
 const initialState = {
   crossOrZero: {
     victoriCombination: [
