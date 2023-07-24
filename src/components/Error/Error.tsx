@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { ErrorInfo } from 'react'
 import st from './Error.module.css'
 
-export default function Error(props:any) {
+
+type stateType = {error: any, errorInfo:ErrorInfo};
+
+export default function Error(props:stateType) {
     
     return (
         <div className={st.error}>

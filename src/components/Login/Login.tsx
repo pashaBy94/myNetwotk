@@ -6,6 +6,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { validStatus } from "../validators/validForm";
 import { IconContext } from "react-icons";
 import { RxUpdate } from "react-icons/rx";
+import { BiCheck } from "react-icons/bi";
 
 export type LoginPropType = {
     loginThank: any,
@@ -70,7 +71,7 @@ const LoginForm: FC<LoginPropType> = (props) => {
                 props.loginThank(val.login, val.password, val.rememberMe, val.responseCaptcha, setSubmit.setStatus, setNoFail);
             }}
         >
-            {(formik:FormikProps<FormValuesType>):React.JSX.Element => {
+            {(formik: FormikProps<FormValuesType>): React.JSX.Element => {
                 return (
                     <form onSubmit={formik.handleSubmit} className={st.form__login}>
                         <h3 className={st.form__login_title}>You must log in</h3>
@@ -98,17 +99,26 @@ const LoginForm: FC<LoginPropType> = (props) => {
                             />
                             {formik.touched.password && formik.errors.password && <div className={st.modal__password}>{formik.errors.password}</div>}
                         </div>
-                        <div>
+                        <div className={st.checkbox__wrap}>
                             <label htmlFor='rememberMe'>remember my</label>
-                            <input
-                                type='checkbox'
-                                id='rememberMe'
-                                name='rememberMe'
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                checked={formik.values.rememberMe}
-                                className={st.form__checkbox}
-                            />
+                            <label>
+                                <div className={st.wrap__input}>
+                                    <input
+                                        type='checkbox'
+                                        id='rememberMe'
+                                        name='rememberMe'
+                                        onChange={formik.handleChange}
+                                        onBlur={formik.handleBlur}
+                                        checked={formik.values.rememberMe}
+                                        className={st.form__checkbox}
+                                    />
+                                <div className={`${st.is__ok} ${formik.values.rememberMe?st.is__ok_check:''}`}>
+                                    <IconContext.Provider value={{ size: "3em", color: "#4A86A8" }}>
+                                        <BiCheck />
+                                    </IconContext.Provider>
+                                </div>
+                                </div>
+                            </label>
                         </div>
                         <div className={st.wrap_captcha}>
                             <ReCAPTCHA

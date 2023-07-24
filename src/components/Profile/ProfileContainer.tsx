@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentType } from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import { setCurrentProfileThunk, savePhotoThunk, setCurrentStatusThunk, getCurrentStatusThunk, updateInfoProfileThunk } from "../../redux/thankCreator";
@@ -28,11 +28,11 @@ type MapDispatchProfileType = {
     setMyProfile: any, 
     updateInfoProfileThunk: any
 };
-type PropProfyleType = {
+type PropsProfyleType = {
     router: any
 };
 
-type PropsProfileType = MapStateProfileType & MapDispatchProfileType & PropProfyleType;
+type PropsProfileType = MapStateProfileType & MapDispatchProfileType & PropsProfyleType;
 
 class ProfileContainer extends React.Component<PropsProfileType> {
     componentDidMount() {
@@ -85,7 +85,7 @@ const mapStateToProp = (state: GlobalStateType) => ({
     error: getError(state),
 });
 
-export default compose(
+export default compose<ComponentType>(
     connect(mapStateToProp, { setCurrentProfile, setCurrentProfileThunk, setCurrentStatusThunk, getCurrentStatusThunk, savePhotoThunk, setMyPages, setMyProfile, updateInfoProfileThunk }),
     authUs,
     withRouter

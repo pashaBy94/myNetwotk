@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { ComponentType, FC, memo } from "react";
 import { getTopFriends } from "../../redux/selectors";
 import Friends from "./Friends";
 import { connect } from "react-redux";
@@ -20,7 +20,7 @@ const mapStateToProps = (state: GlobalStateType) => ({
   topFriends: getTopFriends(state)
 });
 
-export default compose(
+export default compose<ComponentType>(
   connect(mapStateToProps,{}),
   withRouter
   )(FriendsContainerMemo)

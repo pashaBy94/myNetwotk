@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 // import { profileType } from '../typeAndInterface/typeAndInterface';
 
 type APIUSType = {
@@ -133,6 +133,13 @@ export class APIUS implements APIUSType {
     // };
     // async getCaptcha() {
     //     return this.instance.get<CaptchaApiType>(`security/get-captcha-url`).catch(r => { throw Error(r) })
+    // };
+    // async addDialods(id: number) {
+    //     let json = JSON.stringify({body:'Hello friend!'});
+    //     return this.instance.post(`dialogs/` + id + '/messages', json, { headers: { 'API-KEY': 'a3085c13-b7e2-4ffc-892a-9ba320b8602e' } })
+    // };
+    // async startDialog(id: number) {
+    //     return this.instance.put(`dialogs/` + id, { headers: { 'API-KEY': 'a3085c13-b7e2-4ffc-892a-9ba320b8602e' } })
     // };
 }
 export const userAPI = new APIUS();

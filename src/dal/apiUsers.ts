@@ -18,8 +18,9 @@ type SetUsersApiPageType = {
 type FollowApiType =  object;
 
 class apiUsers extends APIUS {
-    async setUsersPageNumber(countUsersPage: number, numPage: number) {
-        return this.instance.get<SetUsersApiPageType>(`users?count=${countUsersPage}&page=${numPage}`).catch(r => { throw Error(r) })
+    async setUsersPageNumber(countUsersPage: number, numPage: number, friend?: boolean, term?: string) {
+        if(term) return this.instance.get<SetUsersApiPageType>(`users?count=${countUsersPage}&page=${numPage}&friend=${friend}&term=${term}`).catch(r => { throw Error(r) })
+        return this.instance.get<SetUsersApiPageType>(`users?count=${countUsersPage}&page=${numPage}&friend=${friend}`).catch(r => { throw Error(r) })
     };
     async deleteFollowUser(id: number) {
         return this.instance.delete<GenericType<FollowApiType>>(`follow/` + id, { headers: { 'API-KEY': 'a3085c13-b7e2-4ffc-892a-9ba320b8602e' } }).catch(r => { throw Error(r) })

@@ -10,7 +10,6 @@
             video.volume = 0.5;
             
             video.addEventListener('canplay',(event)=>{
-                // play.style.backgroundImage = 'url(images/play.png)';
                 position.firstElementChild.style.width = '0%';
                 player.classList.add('active');
             });

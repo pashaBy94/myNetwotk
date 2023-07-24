@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import OneFriend from "./OneFriend";
+import OneFriend from "./Onefrind";
 import st from './ListFriends.module.css';
 import { listComponentWriteFriends } from "../../../utils/helpers";
 import { FriendsPropType } from "../../../typeAndInterface/typeAndInterface";

@@ -3,7 +3,13 @@ import st from './ListFriends.module.css';
 import { NavLink } from "react-router-dom";
 
 
-export default memo(function OneFriend({name, imag, id}){
+export type OneFriendsType = {
+  name:string,
+  imag:string,
+  id:number
+};
+
+export default memo(function OneFriend({name, imag, id}:OneFriendsType){
     return(
       <li>
         <NavLink to={`/profile/${id}`}>

@@ -2,7 +2,7 @@ import React from 'react';
 import st from './PostList.module.css';
 import Post from "./Post/Post";
 import { listComponentWritePosts } from "../../../../utils/helpers";
-import { PropMyPostType } from '../MyPost';
+import { PropMyPostType } from "../../../../typeAndInterface/typeAndInterface";
 
 const PostList = (props: PropMyPostType) => {
     const listPost = listComponentWritePosts(props, Post);

@@ -101,12 +101,13 @@
     "jsx": "react",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"
   ],
   "include": [
     "src/**/*.ts"
-, "src/redux/musicReducer.ts", "src/components/Musics/sound/sound.js"  ]
+, "src/redux/musicReducer.ts", "src/components/Musics/sound/sound.js", "src/App.js", "src/hot/authUs.tsx" , "src/components/validators/validForm.tsx", "src/utils/helpers.tsx" ]
 }

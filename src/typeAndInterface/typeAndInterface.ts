@@ -4,7 +4,7 @@ import { qala } from "../components/Musics/sound/sound.js";
 type RootReducerType = typeof reducers;
 export type GlobalStateType = ReturnType<RootReducerType>;
 
-type DialogsType = {
+export type DialogsType = {
     name: string,
     id: number
 };
@@ -108,5 +108,27 @@ export type PropOneUsType = {
     user: UsersType, 
     thunkAddFollow: (id: number) => (dispatch: any) => void,
     thunkUnFollow: (id: number) => (dispatch: any) => void,
-    isDisabledFollowButton: Array<number>,
+};
+
+export type PropMyPostType = {
+    postsData: postsDataType,
+    postAdd?: any,
+    postsDelete: any
+};
+
+export type PropsUsersType = {
+    // setCurrentPage: (currentPage:number) => object
+    // numberCurrentPage: number,
+    // setAjaxAndWriteUser: (numPage: number) => void
+    // countUsersPage: number,
+    // isLoader: boolean,
+    // friend: boolean | null,
+    // term: string,
+    users: Array<UsersType>,
+    // thunkAddFollow: (id:number)=>(dispatch:any)=>void
+    // thunkAddUsers: (countUsersPage: number, numberCurrentPage: number, isLoad: boolean, friend:boolean|null, term: string) => (dispatch: any) => void
+    // thunkUnFollow: (id:number)=>(dispatch:any)=>void
+    // totalCountPage: number,
+    // setSearch: (friendly:boolean | null, term: string)=> void
+    // lengthCountPage: Array<Array<number>>
 };

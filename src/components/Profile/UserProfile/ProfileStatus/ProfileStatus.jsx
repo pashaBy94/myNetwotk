@@ -12,7 +12,6 @@ export default function ProfileStatus(props){
         props.setCurrentStatusThunk(status);
     }
     function changeStatus(ev){
-        console.log(ev.currentTarget.value);
         setStatus(ev.currentTarget.value);
     }
     useEffect(() => {

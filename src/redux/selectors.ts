@@ -1,11 +1,11 @@
-import { authenticationType, FriendPropType, GlobalStateType, MessagType, postsDataType, profileType, SountItemType, UsersType } from "../typeAndInterface/typeAndInterface";
+import { authenticationType, DialogsType, FriendPropType, GlobalStateType, MessagType, postsDataType, profileType, SountItemType, UsersType } from "../typeAndInterface/typeAndInterface";
 
 export const getSuperCurrentProfile = (state:GlobalStateType):profileType|null => state.profilePage.currentProfile;
 export const getSuperMyProfile = (state:GlobalStateType):profileType|null => state.profilePage.myProfile;
 export const getCurrentStatus = (state:GlobalStateType):string => state.profilePage.currentStatus;
 export const getAuthenticationId = (state:GlobalStateType):number|null => state.authUser.authentication.id;
 export const getMessag = (state:GlobalStateType):Array<MessagType> => state.dialogsPage.messag;
-export const getDialodsPageData = (state:GlobalStateType):Array<object> => state.dialogsPage.data;
+export const getDialodsPageData = (state:GlobalStateType):Array<DialogsType> => state.dialogsPage.data;
 export const getAuthenticationUser = (state:GlobalStateType):authenticationType => state.authUser.authentication;
 export const getIsAuth = (state:GlobalStateType):boolean => state.authUser.isAuth;
 export const getProfile = (state:GlobalStateType):object|null => state.authUser.profile;
@@ -31,3 +31,5 @@ export const getVictoriRed = (state:GlobalStateType):number => state.games.cross
 export const getVictoriBlue = (state:GlobalStateType):number => state.games.crossOrZero.blue.victoriBlue;
 export const getNameBlue = (state:GlobalStateType):string => state.games.crossOrZero.blue.nameBlue;
 export const getNameRed = (state:GlobalStateType):string => state.games.crossOrZero.red.nameRed;
+export const getFriend = (state:GlobalStateType):boolean | null => state.usersPage.search.friend;
+export const getTerm = (state:GlobalStateType):string =>state.usersPage.search.term;

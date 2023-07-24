@@ -1,4 +1,4 @@
-import { FOLLOW, UNFOLLOW, SET_USERS, SET_TOTAL_COUNT_PAGE, SET_LENGTH_COUNT_PAGE, SET_CURRENT_PAGE, TOGGLE_ISLOADER, TOGGLE_DISABLED_FOLLOW } from "./types";
+import { FOLLOW, UNFOLLOW, SET_USERS, SET_SEARCH, SET_TOTAL_COUNT_PAGE, SET_LENGTH_COUNT_PAGE, SET_CURRENT_PAGE, TOGGLE_ISLOADER, TOGGLE_DISABLED_FOLLOW } from "./types";
 import { followUnfollowHelper } from "./../utils/helpers";
 
 type followType = {
@@ -34,9 +34,14 @@ type toggleDisabledFollowType = {
     id: number,
     isLoad: boolean,
 };
+type setSearchType = {
+    type: typeof SET_SEARCH,
+    friendly: boolean | null,
+    term: string,
+}
 
 export type ActionUserType = followType | unfollowType | setUserType | setTotalCountPageType |
-    setLengthCountPageType | setCurrentPageType | toggleIsLoaderType | toggleDisabledFollowType;
+    setLengthCountPageType | setCurrentPageType | toggleIsLoaderType | toggleDisabledFollowType | setSearchType;
 
 export const follow = (id: number):followType => ({ type: FOLLOW, id });
 export const unfollow = (id:number):unfollowType => ({ type: UNFOLLOW, id });
@@ -46,6 +51,8 @@ export const setLengthCountPage = (leng:number):setLengthCountPageType => ({ typ
 export const setCurrentPage = (currentPage:number):setCurrentPageType => ({ type: SET_CURRENT_PAGE, currentPage });
 export const toggleIsLoader = (propLoader:boolean):toggleIsLoaderType => ({ type: TOGGLE_ISLOADER, propLoader });
 export const toggleDisabledFollow = (id:number, isLoad:boolean):toggleDisabledFollowType => ({ type: TOGGLE_DISABLED_FOLLOW, id, isLoad });
+export const setSearch = (friendly:boolean | null, term: string | null):setSearchType => ({type: SET_SEARCH, friendly, term})
+// export const setTerm = (term:string):setTermType => ({type: SET_TERM, term})
 
 const initialState:initialUserStateType = {
     users: [],
@@ -55,6 +62,10 @@ const initialState:initialUserStateType = {
     lengthCountPage: [],
     isLoader: true,
     isDisabledFollowButton: [],
+    search: {
+        friend: null,
+        term: ''
+    }
 };
 export type initialUserStateType = {
     users: Array<any>,
@@ -64,6 +75,10 @@ export type initialUserStateType = {
     lengthCountPage: Array<Array<number>>,
     isLoader: boolean,
     isDisabledFollowButton: Array<number>,
+    search:{
+        friend: null | boolean,
+        term: string
+    }
 };
 
 export function usersPageReducer(state = initialState, action:ActionUserType):initialUserStateType {
@@ -112,6 +127,11 @@ export function usersPageReducer(state = initialState, action:ActionUserType):in
             } else {
                 newState.isDisabledFollowButton = newState.isDisabledFollowButton.filter((id) => id !== action.id)
             }
+            break;
+        }
+        case SET_SEARCH: {
+            newState.search = { term: action.term, friend: action.friendly};
+            newState.numberCurrentPage = 1;
             break;
         }
         default: { }

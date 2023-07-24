@@ -8,6 +8,7 @@ import { api_Profile } from "../dal/apiProfile";
 import { api_Users } from "../dal/apiUsers";
 import { api_Auth } from "../dal/apiAuth";
 import { BaseThunkDispatchType } from "./redux-store";
+import { AnyAction } from "redux";
 
 export const setInitiallizedThank = (): BaseThunkDispatchType<ActionsAppType, appStateType> => {
     return async (dispatch) => {
@@ -117,28 +118,27 @@ export const setCurrentStatusThunk = (status: string | null): ActionThunkAppProf
     }
 }
 
-export type ActionThunkAppUser = BaseThunkDispatchType<ActionUserType | setErrorType, initialUserStateType | appStateType>
-export const thunkAddUsers = (countUsersPage: number, numberCurrentPage: number, isLoad: boolean): ActionThunkAppUser => {
+export type ActionThunkAppUser = BaseThunkDispatchType<ActionUserType | setErrorType, initialUserStateType | appStateType> | AnyAction;
+export const thunkAddUsers = (countUsersPage: number, numberCurrentPage: number, isLoad: boolean, friend?: boolean|null, term?: string): ActionThunkAppUser => {
     return async (dispatch) => {
         if (!isLoad) dispatch(toggleIsLoader(true))
-        api_Users.setUsersPageNumber(countUsersPage, numberCurrentPage).then((res: any) => {
+        api_Users.setUsersPageNumber(countUsersPage, numberCurrentPage, friend, term).then((res: any) => {
             dispatch(setUser(res.data.items));
             dispatch(setTotalCountPage(res.data.totalCount));
             dispatch(setLengthCountPage(res.data.totalCount));
         }).then(() => dispatch(toggleIsLoader(false))).catch((e: Error) => { dispatch(actionsApp.setError(e)) });
     }
 }
-export const thunkAddNextUsers = (numPage: number, countUsersPage: number): ActionThunkAppUser => {
+export const thunkAddNextUsers = (numPage: number, countUsersPage: number, friend?:boolean|null, term?: string): ActionThunkAppUser => {
     return async (dispatch) => {
         dispatch(toggleIsLoader(true));
-        api_Users.setUsersPageNumber(countUsersPage, numPage).then((res) => {
+        api_Users.setUsersPageNumber(countUsersPage, numPage, friend, term).then((res) => {
             dispatch(setUser(res.data.items));
         }).then(() => dispatch(toggleIsLoader(false))).catch((e: Error) => { dispatch(actionsApp.setError(e)) });
     }
 }
 export const thunkAddFollow = (id: number): ActionThunkAppUser => {
     return async (dispatch) => {
-        dispatch(toggleDisabledFollow(id, true));
         api_Users.addFollowUser(id).then((res: any) => {
             if (res.data.resultCode === resultCodeNumb.success) {
                 dispatch(follow(id));

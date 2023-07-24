@@ -1,16 +1,19 @@
-import Messag from "./Messag/Messag";
+import Messag from "./Messag/Mes";
 import st from './Messages.module.css'
 import { listComponentWriteMessag } from "../../../utils/helpers";
-import { useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
+import { MessagType } from "../../../typeAndInterface/typeAndInterface";
 
+type MessagesType = {
+  messages: Array<MessagType>
+};
 
-export default function Messages({messages}){
-  const refs = useRef(null);
+const Messages:FC<MessagesType> = ({messages})=>{
+  const refs = useRef<HTMLHRElement>(null);
   useEffect(()=>{
-      console.log(refs.current);
+      if(refs.current)
       refs.current.scrollIntoView();
   })
-
   return (
     <div className={st.dialog__messages}>
       <div className={st.dialog__messages_wrap}>
@@ -20,3 +23,4 @@ export default function Messages({messages}){
     </div>
   )
 }
+export default Messages;

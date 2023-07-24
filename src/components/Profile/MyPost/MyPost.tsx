@@ -2,13 +2,8 @@ import React from "react";
 import st from './MyPost.module.css';
 import ProfileFormAddPost from "./ProfileFormAddPost/ProfileFormAddPost";
 import PostList from "./PostList/PostList";
-import { postsDataType } from "../../../typeAndInterface/typeAndInterface";
+import { PropMyPostType } from "../../../typeAndInterface/typeAndInterface";
 
-export type PropMyPostType = {
-    postsData: postsDataType,
-    postAdd?: any,
-    postsDelete: any
-};
 
 export default class MyPost extends React.Component<PropMyPostType> {
     render() {

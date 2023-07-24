@@ -21,8 +21,8 @@ import { getError } from './redux/selectors.ts';
 import Games from './components/Games/Games';
 import { Navigate } from 'react-router-dom';
 import Video from './components/Video/Video';
-
-const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+import { UsersContainer } from './components/Users/UsersContainer';
+// const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const MusicsContainer = React.lazy(() => import('./components/Musics/MusicsContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer'));
@@ -104,4 +104,3 @@ export default function AppFull() {
     </Provider>
   )
 }
-

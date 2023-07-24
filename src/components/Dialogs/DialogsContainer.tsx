@@ -1,15 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import Dialogs from "./Dialogs";
 import { connect } from "react-redux";
 import { messagAdd } from "../../redux/dialogsPageReducer";
 import { authUs } from "../../hot/authUs";
 import { compose } from "redux";
 import { getDialodsPageData, getMessag } from "../../redux/selectors";
-import { GlobalStateType, MessagType } from "../../typeAndInterface/typeAndInterface";
+import { DialogsType, GlobalStateType, MessagType } from "../../typeAndInterface/typeAndInterface";
+import { ComponentType } from "react";
 
 export type DialogsContainerType = {
     messages: Array<MessagType>,
-    data: Array<object>,
+    data: Array<DialogsType>,
     messagAdd: any
 };
 
@@ -28,4 +29,4 @@ const mapStateToProps = (state:GlobalStateType) => ({
         data: getDialodsPageData(state),
     });
 
-export default compose(connect(mapStateToProps, {messagAdd}), authUs)(DialogsContainer) 
+export default compose<ComponentType>(connect(mapStateToProps, {messagAdd}), authUs)(DialogsContainer) 

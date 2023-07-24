@@ -7,7 +7,6 @@ type messagAddType = {
 };
 
 export const messagAdd = (mes:string):messagAddType => ({type: ADD_MESSAG, mes});
-
 export type actionMessagType = messagAddType;
 
 const initialState: stateDialogsType = {
