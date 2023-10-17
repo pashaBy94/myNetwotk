@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Социальная сеть 
+<p align="center">
+      <img src="https://github.com/pashaBy94/myNetwotk/blob/master/public/icon.png" width="200">
+</p>
+<h1>Интерфейс социальной сети</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/HomePage.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/Friends.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/captcha.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/game.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/loginForm.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/message.png" alt="social network" width="500">
+            <hr/>
+            <img src="https://github.com/pashaBy94/myNetwotk/blob/master/forGithub/music.png" alt="social network" width="500">
 
-## Available Scripts
 
-In the project directory, you can run:
+</p>
 
-### `npm start`
+## Описание
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>Камера пазл - уникальная игра, не имеющая аналогов на платформе Яндекс Игры. Это живой пазл, дающий возможность игроку самому создавать (с помощью камеры) уникальный контекст пазла. Камера пазл интересна для всех категорий лиц. Все могут использовать свое воображение для создания контента. 
+Фичи в игре: 
+- использование камеры для создания пазла;
+- использование наложения тематических картинок на ваше изображение. 
+В игре существует 4 уровня сложности. Можно соревноваться с другими игроками по скорости собирания пазла.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Ссылка на игру
+https://pashaby94.github.io/camera_pazzle/
 
-### `npm test`
+## Инструкция
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>Перед игрой, игрок должен разрешить доступ к своей камере. Игра начинается с выбора сценария. 
+Сценарии игры: пазл с использованием видео, пазл с использованием фото, пазл с использованием картинки. После выбора сценария, нужно выбрать картинку для игры, либо заставку которая накладывается на фото или видео игрока. После выбора заставки необходимо выбрать сложность игры. Сложность игры состоит из четырех уровней по количеству пазлов. Затем игрок переходит в игровой стол, где разбросаны пазлы. После того как игрок собрал весь пазл, его предлагается скачать на телефон или компьютер. В ходе игры также можно менять  цвет игрового поля, отключать музыку, звуки, время.</p>
 
-### `npm run build`
+## Разработчик
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https
