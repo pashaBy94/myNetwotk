@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import st from './UserBarContent.module.css'
+import { useDispatch } from "react-redux";
+import { logoutThank } from "../../../../../redux/thankCreator";
 
-export default function UserBarContent({logoutThank, toggleBar}){
+export default function UserBarContent({ toggleBar}){
+  const dispatch = useDispatch();
   const quitProfile = (e: React.MouseEvent<HTMLElement>)=>{
     e.preventDefault();
-    logoutThank();
+    dispatch(logoutThank());
     toggleBar(false);
   }
   const goToLink = ()=>{

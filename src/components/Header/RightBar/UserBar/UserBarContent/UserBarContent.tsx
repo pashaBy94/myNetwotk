@@ -6,7 +6,7 @@ const UserBarContent = ({props})=>{
   if(!props.stateBar) return null
         return(
               <div className={st.header__right__menu}>
-                <UserBarList logoutThank={props.logoutThank} toggleBar={props.toggleBar}/>
+                <UserBarList toggleBar={props.toggleBar}/>
               </div>
               )  
     }

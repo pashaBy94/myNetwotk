@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { actionsGames } from "../../../redux/gamesReducer";
 import { getCountMove, getCurrentMove, getCombinationRed, getCombinationBlue, getCurrentVictoriCrossOrZero, getVictoriRed, getVictoriBlue, getNameBlue, getNameRed } from "../../../redux/selectors";
 import { GlobalStateType } from "../../../typeAndInterface/typeAndInterface";
-import { actionsApp } from "../../../redux/appReducer";
 
 type CrossStateType = {
     countMove: number;

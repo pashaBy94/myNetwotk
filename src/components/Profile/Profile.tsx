@@ -19,6 +19,7 @@ export type PropProfyleType = {
 };
 
 const Profile:FC<PropProfyleType> = ({ profile, status, setCurrentStatusThunk, savePhotoThunk, isMyPages, myProfile, updateInfoProfileThunk, authenticationId })=> {
+
   const [isBtn, setIsBtn] = useState(false);
   const refList = useRef(null);
   useEffect(()=>{

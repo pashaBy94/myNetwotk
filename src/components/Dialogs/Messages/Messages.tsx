@@ -2,13 +2,14 @@ import Messag from "./Messag/Mes";
 import st from './Messages.module.css'
 import { listComponentWriteMessag } from "../../../utils/helpers";
 import React, { FC, useEffect, useRef } from "react";
-import { MessagType } from "../../../typeAndInterface/typeAndInterface";
+import { useSelector } from "react-redux";
+import { getMessag } from "../../../redux/selectors";
 
 type MessagesType = {
-  messages: Array<MessagType>
 };
 
-const Messages:FC<MessagesType> = ({messages})=>{
+const Messages:FC<MessagesType> = ()=>{
+  const messages = useSelector(getMessag);
   const refs = useRef<HTMLHRElement>(null);
   useEffect(()=>{
       if(refs.current)

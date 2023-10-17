@@ -7,7 +7,6 @@ type PropsType = {
     toggleBar:any,
     stateBar:boolean 
     myProfile:any,
-    logoutThank:any,
 };
 const UserBar:FC<PropsType> = (props) => {
     return (

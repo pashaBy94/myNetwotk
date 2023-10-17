@@ -3,16 +3,18 @@ import React, { FC } from "react";
 import { useFormik } from "formik";
 import { validateMessag } from "../../../validators/validForm";
 import { useRef } from 'react';
-import { Formik, FormikProps } from 'formik';
+import { FormikProps } from 'formik';
+import { useDispatch } from 'react-redux';
+import { messagAdd } from '../../../../redux/dialogsPageReducer';
 
 
 type FormMessagType = {
-    messagAdd: any
 };
 
 type FormValuesType = FormikProps<FormMessagType>;
 
-const FormMessagWrite:FC<FormMessagType> = ({ messagAdd })=> {
+const FormMessagWrite:FC<FormMessagType> = ()=> {
+    const dispatch = useDispatch();
     const mesRef = useRef<HTMLTextAreaElement>(null);
     const formik = useFormik<{messag:string}>({
         initialValues: {
@@ -20,7 +22,7 @@ const FormMessagWrite:FC<FormMessagType> = ({ messagAdd })=> {
         },
         validate: validateMessag(600, 'messag'),
         onSubmit(val) {
-            messagAdd(val.messag);
+            dispatch(messagAdd(val.messag));
             val.messag = '';
             if(mesRef.current)
             mesRef.current.value = '';

@@ -18,7 +18,6 @@ beforeEach(()=>{
     };
 });
 
-
 test('postAdd', ()=>{
     const res = profilPageReducer(initialState, postAdd('Say hello'));
     expect(res.postsData.length).toBe(5);

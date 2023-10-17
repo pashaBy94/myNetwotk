@@ -5,7 +5,7 @@ import { authUserThank } from "./redux/thankCreator.ts";
 import './App.css';
 import { setInitiallizedThank } from './redux/thankCreator.ts';
 import { compose } from "redux";
-import HeaderContainer from './components/Header/HeaderContainer';
+import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import NewsContainer from './components/News/NewsContainer';
@@ -14,7 +14,6 @@ import { store } from './redux/redux-store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Preloader from './components/general/Preloader/Preloader';
-import FriendsContainer from './components/Friends/FriendsContainer';
 import SettingsContainer from './components/Settings/Settings';
 import CrossOrZeroContainer from './components/Games/CrossOrZero/CrossOrZeroContainer';
 import { getError } from './redux/selectors.ts';
@@ -22,6 +21,7 @@ import Games from './components/Games/Games';
 import { Navigate } from 'react-router-dom';
 import Video from './components/Video/Video';
 import { UsersContainer } from './components/Users/UsersContainer';
+import Friends from './components/Friends/Friends';
 // const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const MusicsContainer = React.lazy(() => import('./components/Musics/MusicsContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
@@ -56,7 +56,7 @@ class App extends React.Component {
     if (this.props.error) return <Error error={this.props.error} />
     return (<>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <HeaderContainer />
+        <Header />
         <div className='app'>
           <div className='app-wrapper'>
             <NavBar />
@@ -78,7 +78,7 @@ class App extends React.Component {
                 </Routes>
               </Suspense>
             </div>
-            <FriendsContainer />
+            <Friends />
           </div>
         </div>
         <Footer />

@@ -14,7 +14,6 @@ type PropsType = {
 }
 
 export default memo(function SearchFriend(props:PropsType) {
-    console.log(props);
     const dispatch = useDispatch();
     const setSear = (w:boolean|null,t:string)=>{
         dispatch(setSearch(w, t));
