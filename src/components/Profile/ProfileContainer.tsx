@@ -63,6 +63,8 @@ class ProfileContainer extends React.Component<PropsProfileType> {
         }
     }
     render() {
+        console.log(this.props);
+        
         if (!this.props.currentProfile) return <Preloader />
         return (<Profile
             profile={this.props.currentProfile}

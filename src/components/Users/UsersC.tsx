@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountUsersPage, getFriend, getIsLoader, getNumberCurrentPage, getTerm } from "../../redux/selectors";
 import { filterNull } from "../../utils/helpers";
 import { thunkAddNextUsers, thunkAddUsers } from "../../redux/thankCreator";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { URLSearchParams } from "url";
 
 export default memo(function Users() {
     const numberCurrentPage = useSelector(getNumberCurrentPage);
@@ -17,7 +15,7 @@ export default memo(function Users() {
     const friend = useSelector(getFriend);
     const term = useSelector(getTerm);
     const dispatch = useDispatch();
-  
+    
     const  setAjaxAndWriteUser = (numPage: number)=> {
         dispatch(thunkAddNextUsers(numPage, countUsersPage, filterNull(friend), term ));
     };
@@ -32,6 +30,7 @@ export default memo(function Users() {
                 countUsersPage={countUsersPage}
                 isLoader={isLoader}
                 friend={friend}
+                numberCurrentPage={numberCurrentPage}
                 term={term}/>
             </div>
             <Paginator 

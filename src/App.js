@@ -22,6 +22,7 @@ import { Navigate } from 'react-router-dom';
 import Video from './components/Video/Video';
 import { UsersContainer } from './components/Users/UsersContainer';
 import Friends from './components/Friends/Friends';
+import Fake from './components/Fake';
 // const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const MusicsContainer = React.lazy(() => import('./components/Musics/MusicsContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
@@ -64,6 +65,7 @@ class App extends React.Component {
               <Suspense>
                 <Routes>
                   <Route path='/profile/:usId?' element={<ProfileContainer />} />
+                  <Route path='/profile/:usId?/:test' element={<Fake />} />
                   <Route path='/dialogs' element={<DialogsContainer />} />
                   <Route path='/users' element={<UsersContainer />} />
                   <Route path='/news' element={<NewsContainer />} />

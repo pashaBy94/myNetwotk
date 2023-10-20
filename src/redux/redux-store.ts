@@ -7,7 +7,7 @@ import { appReducer } from './appReducer';
 import { musicReducer } from './musicReducer';
 import thunkMiddleware, { ThunkAction } from 'redux-thunk';
 import { gamesReducer } from './gamesReducer';
-
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 export const reducers = combineReducers({
     dialogsPage: dialogsPageReducer,
@@ -20,4 +20,4 @@ export const reducers = combineReducers({
 });
 export type ActionsType<T> = T extends { [key: string]: (...args: Array<any>) => infer U} ? U : never ;
 export type BaseThunkDispatchType<A extends Action, S, R = Promise<void>> = ThunkAction<R, S, unknown, A>;
-export const store = createStore(reducers, applyMiddleware(thunkMiddleware));
+export const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMiddleware)));

@@ -15,6 +15,7 @@ const Paginator: FC<PropsType> = (props) => {
     const dispatch = useDispatch();
     const [count, setCount] = useState(1);
     const lengthCountPage = useSelector(getLengthCountPage);
+console.log(lengthCountPage);
 
     const setCurrentPa = (e: number) => {
         dispatch(setCurrentPage(e))

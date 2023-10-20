@@ -6,6 +6,7 @@ import Preloader from "../general/Preloader/Preloader";
 import { subscribeScroll } from "../../utils/helpers";
 import ButtonToTop from "../general/ButtonToTop/ButtonToTop";
 import { profileType } from "../../typeAndInterface/typeAndInterface";
+import { FloatButton } from 'antd';
 
 export type PropProfyleType = {
   profile: profileType | null,
@@ -18,16 +19,19 @@ export type PropProfyleType = {
   myProfile: profileType | null,
 };
 
+
 const Profile:FC<PropProfyleType> = ({ profile, status, setCurrentStatusThunk, savePhotoThunk, isMyPages, myProfile, updateInfoProfileThunk, authenticationId })=> {
 
   const [isBtn, setIsBtn] = useState(false);
   const refList = useRef(null);
   useEffect(()=>{
-    window.addEventListener('scroll', ()=> subscribeScroll(refList, setIsBtn));
+    window.addEventListener('scroll', function(){subscribeScroll(refList, setIsBtn)});
     return ()=>{
-        window.removeEventListener('scroll',  ()=> subscribeScroll(refList, setIsBtn));
+      // console.log('eee');
+        window.removeEventListener('scroll',  function(){subscribeScroll(refList, setIsBtn)});
     }
-})
+});
+
   if (!profile) return <Preloader />
   return (
     <div className={st.content} ref={refList}>
