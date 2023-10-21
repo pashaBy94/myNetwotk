@@ -62,9 +62,7 @@ class ProfileContainer extends React.Component<PropsProfileType> {
             this.props.getCurrentStatusThunk(usId);
         }
     }
-    render() {
-        console.log(this.props);
-        
+    render() {   
         if (!this.props.currentProfile) return <Preloader />
         return (<Profile
             profile={this.props.currentProfile}

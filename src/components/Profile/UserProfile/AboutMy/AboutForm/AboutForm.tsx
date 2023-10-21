@@ -33,17 +33,13 @@ const AboutForm:FC<AboutPropType> = ({ profile, setModEdit, updateInfoProfileThu
                     }
                 }
                 validate={validateUrl(100)}
-                onSubmit={(val, setSubmit) => {
-                    console.log(val);
-                    
+                onSubmit={(val, setSubmit) => {                   
                     let obj = { userId: authenticationId, ...val };
                     updateInfoProfileThunk(obj, setSubmit.setStatus, setModEdit);
                     setOk(true);
                 }}
             >
-                {(formik) => {
-                    console.log(formik.errors);
-                    
+                {(formik) => {                    
                     if (formik.status) parseStatus(formik.status)
                     return (
                         <form onSubmit={formik.handleSubmit} className={st.about__info}>

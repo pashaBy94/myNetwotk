@@ -13,6 +13,7 @@ export default class NavBar extends React.Component<PropsType>{
                     <li><NavLink to='/dialogs' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="message.png" className={st.nav__imag__item} alt=""/></div>Messages</NavLink></li>
                     <li><NavLink to='/users' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="friends.png" className={st.nav__imag__item} alt=""/></div>Friends</NavLink></li>
                     <li><NavLink to='/news' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="news.png" className={st.nav__imag__item} alt=""/></div>News</NavLink></li>
+                    <li><NavLink to='/chat' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="message.png" className={st.nav__imag__item} alt=""/></div>Chat developer</NavLink></li>
                     <li><NavLink to='/musics' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="music.png" className={st.nav__imag__item} alt=""/></div>Musics</NavLink></li>
                     <li><NavLink to='/photos' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="photo.png" className={st.nav__imag__item} alt=""/></div>Photo</NavLink></li>
                     <li><NavLink to='/videos' className={nD=>nD.isActive?st.active: ''}><div className={st.nav__imag}><img src="video-player.png" alt="" className={st.nav__imag__item}/></div>Video</NavLink></li>

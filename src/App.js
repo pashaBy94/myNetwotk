@@ -22,11 +22,11 @@ import { Navigate } from 'react-router-dom';
 import Video from './components/Video/Video';
 import { UsersContainer } from './components/Users/UsersContainer';
 import Friends from './components/Friends/Friends';
-import Fake from './components/Fake';
-// const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
 const MusicsContainer = React.lazy(() => import('./components/Musics/MusicsContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer'));
+const ChatPage = React.lazy(() => import('./components/Pages/ChatPage/ChatPage'));
+
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -65,7 +65,6 @@ class App extends React.Component {
               <Suspense>
                 <Routes>
                   <Route path='/profile/:usId?' element={<ProfileContainer />} />
-                  <Route path='/profile/:usId?/:test' element={<Fake />} />
                   <Route path='/dialogs' element={<DialogsContainer />} />
                   <Route path='/users' element={<UsersContainer />} />
                   <Route path='/news' element={<NewsContainer />} />
@@ -74,6 +73,7 @@ class App extends React.Component {
                   <Route path='/settings' element={<SettingsContainer />} />
                   <Route path='/games' element={<Games />} />
                   <Route path='/videos' element={<Video />} />
+                  <Route path='/chat' element={<ChatPage />} />
                   <Route path='/coz' element={<CrossOrZeroContainer />} />
                   <Route path='/' element={<Navigate replace to="/profile" /> } />
                   <Route path='*' element={<Error error={this.props.error} /> } />

@@ -64,7 +64,6 @@ function readAndUpdate(){
 }
 export const subscribeScroll = function(refList:any, setIsBtn:any){
   if(frame) return
-  console.log(refList); // ссылка null ????????????????
     if(refList.current){
         let coord = refList.current.getBoundingClientRect();
         console.log(coord.top);

@@ -38,7 +38,6 @@ export default memo(function SearchFriend(props:PropsType) {
         if(Object.keys(url.query).length > 0){
             const isFriend = url.query.friend === 'null'?null:url.query.friend === 'false'?false:true;
             const page = url.query.page === 1?1:url.query.page;
-            console.log(page);
             dispatch(thunkAddUsers(props.countUsersPage, 
                 page, 
                 props.isLoader, 
@@ -57,7 +56,6 @@ export default memo(function SearchFriend(props:PropsType) {
             enableReinitialize = {true}
                 initialValues={{ title: formTerm, who: formTFriend?'friend':formTFriend === null?'all':'notFriend' }}
                 onSubmit={(val: { who: string; title: string; }) => {
-                    console.log(val);
                     const whoIs = val.who==='friend'?true:val.who==='notFriend'?false:null;
                     setSear(whoIs, val.title);
                     thunkAddUse(filterNull(whoIs), val.title);
