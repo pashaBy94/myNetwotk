@@ -1,4 +1,4 @@
-# Социальная сеть https://www.figma.com/file/25UBuBLE9vroXZKwxcUCKR/Artcly-Дизайн-(Copy)?type=design&node-id=3047-14858&mode=design&t=Goy7h1vepZrqcXBx-0
+# Социальная сеть
 <p align="center">
       <img src="https://github.com/pashaBy94/myNetwotk/blob/master/public/icon.png" width="200">
 </p>
