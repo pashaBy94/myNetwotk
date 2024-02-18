@@ -45,13 +45,6 @@ const  Musics:FC<MusicStateType> = (props) => {
     const [isBtn, setIsBtn] = useState(false);
     const refList = useRef(null);
     useEffect(() => {
-        const changeURL = () => {
-            const newUrl = `/${777}`;
-            window.history.replaceState({ detail: 'update' }, '', newUrl);
-        };
-        changeURL();
-    });
-    useEffect(() => {
         window.addEventListener('scroll', () => subscribeScroll(refList, setIsBtn));
         return () => {
             window.removeEventListener('scroll', () => subscribeScroll(refList, setIsBtn));
