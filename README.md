@@ -1,4 +1,4 @@
-# Социальная сеть 
+# Социальная сеть
 <p align="center">
       <img src="https://github.com/pashaBy94/myNetwotk/blob/master/public/icon.png" width="200">
 </p>
